@@ -1,0 +1,275 @@
+@import compass/reset
+@import compass/css3
+@import mixin
+
+body
+	font-family: helvetica,'LiHei Pro','Heiti TC','微軟正黑體'
+	overflow: hidden
+
+.nav
+	position: fixed
+	right: 10px
+	z-index: 50
+	li
+		width: 20px
+		height: 20px
+		font-size: 0
+		margin: 15px
+		background: #fff
+		cursor: pointer
+		+border-radius(50%)
+
+section
+	height: 100vh
+	width: 100%
+	position: relative
+	text-align: center
+	.title
+		position: relative
+		top: 15%
+		h1
+			font-size: 50px
+			line-height: 75px
+		h3
+			font-size: 30px
+	&.section-01
+		background: #f0704b
+		color: #fff
+	&.section-02
+		background: #eaeaea
+	&.section-03
+		background: #2bbec9
+		color: #fff
+	&.section-04
+		background: #2bbec9
+	&.section-05
+		background: #f0704b
+		color: #fff
+		.title
+			top: 100%
+			&.slide
+				+animation(slist00 0.7s 3.2s 1 forwards ease-out)
+				+keyframes(slist00)
+					0%
+						top: 100%
+					100%
+						top: 55%
+.phone
+	width: 250px
+	height: 514px
+	position: fixed
+	z-index: 5
+	left: 50%
+	top: 40%
+	margin-left: -125px
+	text-align: center
+	+transition(0.3s)
+	+bg(phone,svg)
+	background-size: 100%
+	&.sc-02
+		width: 300px
+		height: 617px
+		top: 50%
+		margin-left: -150px
+		margin-top: -308px
+	&.sc-03
+		width: 600px
+		height: 1234px
+		top: 0
+		margin-left: -300px
+		margin-top: 0px
+		&:after
+			position: absolute
+			left: 0
+			top: 0
+			width: 100%
+			height: 100%
+			content: ''
+			background-size: 100%
+			opacity: 0
+			+transition(0.3s)
+			+bg(phone-app,svg)
+			+animation(apps01 0.5s 1.8s 1 forwards)
+			+keyframes(apps01)
+				0%
+					opacity: 0
+				100%
+					opacity: 1
+		&:before
+			position: absolute
+			width: 90px
+			height: 90px
+			content: ''
+			background-size: 100%
+			z-index: 5
+			top: 500px
+			left: 316px
+			opacity: 0
+			+bg(app-icon,svg)
+			+animation(apps02 1.2s 2.4s 1 forwards ease-in)
+			+keyframes(apps02)
+				0%
+					opacity: 0
+				100%
+					opacity: 1
+	.game
+		opacity: 0
+		width: 215px
+		height: 380px
+		margin: 67px 0 0 17px
+		+transition(0.3s)
+		&.show
+			opacity: 1
+			width: 258px
+			height: 456px
+			position: relative
+			overflow: hidden
+			margin: 81px 0 0 21px
+			background: url(../img/ani.gif) 0 0 no-repeat
+			background-size: cover
+			+transition(0.3s)
+			&:after
+				position: absolute
+				width: 100%
+				height: 100%
+				text-align: center
+				line-height: 450px
+				top: 0
+				left: 0
+				content: ''
+				background-size: cover
+				+bg(store,jpg)
+				+transform(translateX(1000px))
+				+transition-delay(0.8s)
+				+transition(0.5s)
+		&.store
+			width: 516px
+			height: 915px
+			margin: 160px 0 0 42px
+			&:after
+				+transform(translateX(0px))
+			&:before
+				width: 50px
+				height: 50px
+				position: absolute
+				z-index: 1
+				content: ''
+				background: #0581ff
+				top: 273px
+				right: 45px
+				opacity: 0
+				+border-radius(50%)
+				+animation(click01 0.6s 1s 1 forwards)
+				+keyframes(click01)
+					0%
+						opacity: 0
+					40%
+						opacity: 1
+					100%
+						opacity: 0
+						+transform(scale(15))
+.phones
+	position: fixed
+	width: 100%
+	height: 100%
+	text-align: center
+	z-index: 15
+	overflow: hidden
+	display: none
+	white-space: nowrap
+	&.slide
+		+animation(slist01 0.8s 3.2s 1 forwards ease-out)
+		+keyframes(slist01)
+			0%
+				top: 0
+				+transform(scale(1))
+			100%
+				+transform(scale(0.8))
+				top: -100%
+	ul
+		text-align: center
+		position: absolute
+		font-size: 0
+		left: 50%
+		margin-left: -9000px
+		&.list
+			+animation(plist01 1s 1s 1 forwards ease-out)
+			+keyframes(plist01)
+				0%	
+					top: 0
+					+transform(scale(1))
+				100%
+					top: -98%
+					+transform(scale(0.06))
+			li
+				opacity: 1 !important
+		&:nth-of-type(2)
+			top: 100%
+			&.list
+				+animation(plist02 1s 1.2s 1 forwards ease-out)
+				+keyframes(plist02)
+					0%
+						top: 100%
+						+transform(scale(1))
+					100%
+						+transform(scale(0.13))
+						top: -75%
+		&:nth-of-type(3)
+			top: 100%
+			&.list
+				+animation(plist03 1s 1.4s 1 forwards ease-out)
+				+keyframes(plist03)
+					0%
+						top: 200%
+						+transform(scale(1))
+					100%
+						+transform(scale(0.2))
+						top: -45%
+	li
+		width: 600px
+		height: 1234px
+		margin: 0 300px
+		background-size: 100%
+		display: inline-block
+		+bg(phone-app-2,png)
+		opacity: 0
+		&:nth-of-type(8)
+			opacity: 1
+.growth
+	position: fixed
+	z-index: 25
+	width: 100%
+	top: 30%
+	&.slide
+		+animation(slist02 0.7s 3.2s 1 forwards ease-out)
+		+keyframes(slist02)
+			0%
+				top: 30%
+				+transform(scale(1))
+			100%
+				top: 0
+				+transform(scale(0.6))
+	.counter
+		text-align: center
+		font-size: 100px
+		padding-top: 320px
+		color: #e04127
+	span
+		position: relative
+		width: 1500px
+		height: 50px
+		background-size: 100%
+		display: block
+		margin: auto
+		top: 1000px
+		+bg(growth,svg)
+		&.show-g
+			+transition(1s)
+			+transition-delay(1.5s)
+			width: 500px
+			height: 312px
+			top: 0
+
+
+
+
