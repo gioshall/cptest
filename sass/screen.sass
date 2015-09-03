@@ -10,14 +10,34 @@ body
 	position: fixed
 	right: 10px
 	z-index: 50
-	li
-		width: 20px
-		height: 20px
+	text-align: center
+	.sub-nav
+		position: relative
+		overflow: hidden
 		font-size: 0
-		margin: 15px
+		margin: -7px 0
+		padding: 0
+		height: 135px
+		+transition(.3s)
+		&.fade
+			+transition(.3s)
+			height: 0
+
+	li
+		width: 25px
+		height: 25px
+		font-size: 0
+		margin: 15px auto
 		background: #fff
 		cursor: pointer
+		position: relative
 		+border-radius(50%)
+		&.active
+			background: #FFF652 
+		&.sub
+			width: 15px
+			height: 15px
+			+transition(.4s)
 
 section
 	height: 100vh
@@ -32,6 +52,23 @@ section
 			line-height: 75px
 		h3
 			font-size: 30px
+	.more
+		width: 50px
+		height: 50px
+		line-height: 50px
+		text-align: center
+		margin: auto
+		border: 3px #fff solid
+		font-size: 30px
+		position: relative
+		top: 75%
+		opacity: 0
+		cursor: pointer
+		+transition(0.4s)
+		+transition-delay(4s)
+		+border-radius(50%)
+		&.slide
+			opacity: 1
 	&.section-01
 		background: #f0704b
 		color: #fff
@@ -54,6 +91,40 @@ section
 						top: 100%
 					100%
 						top: 55%
+	&.section-06
+		background: #8FDEE3
+		.says
+			text-align: center
+			margin-top: 200px
+			li
+				display: inline-block
+				width: 300px
+				margin: 30px
+				vertical-align: top
+				.prt
+					width: 250px
+					height: 250px
+					background: #56638D
+					display: block
+					margin: 20px auto
+					+border-radius(50%)
+				.quote
+					font-family: georgia
+					font-size: 30px
+					line-height: 40px
+					&:before
+						content: '“'
+						color: #999
+						font-size: 50px
+						font-size: 40px
+					&:after
+						content: '”'
+						color: #999
+						font-size: 50px
+						font-size: 40px
+	&.section-07
+		background: #f0704b
+		color: #fff
 .phone
 	width: 250px
 	height: 514px
@@ -66,12 +137,53 @@ section
 	+transition(0.3s)
 	+bg(phone,svg)
 	background-size: 100%
+	&:before
+		content: ''
+		position: absolute
+		width: 100px
+		height: 100px
+		background: #5BCFC9
+		top: 205px
+		left: 75px
+		opacity: .6
+		cursor: pointer
+		+border-radius(50%)
+		+animation(ani01 1s 0s infinite)
+		+keyframes(ani01)
+			0%
+				+transform(scale(1))
+				opacity: .6
+			40%
+				+transform(scale(1.2))
+				opacity: .4
+			100%
+				+transform(scale(1))
+				opacity: .6
+	&:after
+		content: 'AD'
+		position: absolute
+		width: 215px
+		height: 380px
+		top: 67px
+		left: 17px
+		text-align: center
+		line-height: 380px
+		color: #fff
+		cursor: pointer
+		font-size: 40px
 	&.sc-02
 		width: 300px
 		height: 617px
 		top: 50%
 		margin-left: -150px
 		margin-top: -308px
+		&:after
+			width: 258px
+			height: 456px
+			top: 81px
+			left: 21px
+			line-height: 456px
+			opacity: 0
 	&.sc-03
 		width: 600px
 		height: 1234px
@@ -269,6 +381,9 @@ section
 			width: 500px
 			height: 312px
 			top: 0
+.fade
+	+transition(0.3s)
+	opacity: 0
 
 
 

@@ -12,15 +12,21 @@ content="" />
 	<link rel="stylesheet" href="stylesheets/ie.css">
 	<link rel="stylesheet" href="stylesheets/print.css">
 	<link rel="stylesheet" href="stylesheets/screen.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <div class="nav">
 	<ul>
 		<li onClick="cpclick1()"></li>
-		<li onClick="cpclick2()"></li>
-		<li onClick="cpclick3()"></li>
-		<li onClick="cpclick5()"></li>
+		<div class="sub-nav">
+			<li onClick="cpclick1()" class="sub active"></li>
+			<li onClick="cpclick2()" class="sub"></li>
+			<li onClick="cpclick3()" class="sub"></li>
+			<li onClick="cpclick5()" class="sub"></li>
+		</div>
+		<li onClick="cpclick6()"></li>
+		<li onClick="cpclick7()"></li>
 	</ul>
 </div>
 
@@ -56,7 +62,34 @@ content="" />
 		<h1>Click 2 Play 隨點即玩</h1>
 		<h3>純 HTML5 跨平台解決方案</h3>
 	</div>
+	<div class="more" onClick="cpclick6()"><i class="fa fa-chevron-down"></i></div>
 </section>
+<section class="section-06">
+	<div class="title">
+		<h1>菁英推薦 Click 2 Play</h1>
+	</div>
+	<ul class="says">
+		<li>
+			<div class="prt"></div>
+			<div class="quote">Maybe it's the best solution ever.</div>
+		</li>
+		<li>
+			<div class="prt"></div>
+			<div class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+		</li>
+		<li>
+			<div class="prt"></div>
+			<div class="quote">Ut enim ad minim veniam, quis nostrud exercitation.</div>
+		</li>
+	</ul>
+</section>
+<section class="section-07">
+	<div class="title">
+		<h1>聯絡我們</h1>
+		<h3>將有專人聯繫，期待與您合作</h3>
+	</div>
+</section>	
+
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 </body>
