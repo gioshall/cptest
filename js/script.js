@@ -46,7 +46,7 @@ $(document).ready(function() {
                     }
                 });
             } else {
-                $('.growth span').removeClass('show-g').empty();
+               $('.growth span').empty();                
             }
 
             if (index >= 4) {
@@ -59,6 +59,7 @@ $(document).ready(function() {
             } else {
                 $('.phones').hide();
                 $('.phones,.growth').addClass('fade');
+                $('.growth span').removeClass('show-g');
                 $('.phone').show();
                 $('.phones ul').removeClass('list');
                 $('.section-05 .title,.more').removeClass('slide');

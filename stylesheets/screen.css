@@ -878,7 +878,7 @@ body {
   height: 218px;
   top: 0;
 }
-.growth .fade {
+.growth.fade {
   -moz-transform: translateY(-1000px);
   -ms-transform: translateY(-1000px);
   -webkit-transform: translateY(-1000px);
