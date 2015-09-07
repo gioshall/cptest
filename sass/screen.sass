@@ -5,6 +5,10 @@
 body
 	font-family: helvetica,'LiHei Pro','Heiti TC','微軟正黑體'
 	overflow: hidden
+	+bg(bg-c,jpg)
+	background-size: 130% auto
+	background-position: center
+	background-attachment: fixed
 
 .nav
 	position: fixed
@@ -14,7 +18,6 @@ body
 	.sub-nav
 		position: relative
 		overflow: hidden
-		font-size: 0
 		margin: -7px 0
 		padding: 0
 		height: 135px
@@ -22,24 +25,32 @@ body
 		&.fade
 			+transition(.3s)
 			height: 0
-
 	li
-		width: 25px
-		height: 25px
-		font-size: 0
+		width: 40px
+		height: 40px
 		margin: 15px auto
+		line-height: 40px
 		background: #fff
 		cursor: pointer
 		position: relative
+		color: #f0704b
+		font-size: 22px
 		+border-radius(50%)
+		a
+			color: #f0704b
 		&.active
 			background: #FFF652 
 		&.sub
 			width: 15px
 			height: 15px
+			position: relative
 			+transition(.4s)
+			a
+				width: 100%
+				height: 100%
+				display: block
 
-section
+.section
 	height: 100vh
 	width: 100%
 	position: relative
@@ -61,7 +72,7 @@ section
 		border: 3px #fff solid
 		font-size: 30px
 		position: relative
-		top: 75%
+		top: 60%
 		opacity: 0
 		cursor: pointer
 		+transition(0.4s)
@@ -70,32 +81,42 @@ section
 		&.slide
 			opacity: 1
 	&.section-01
-		background: #f0704b
 		color: #fff
 	&.section-02
-		background: #eaeaea
-	&.section-03
-		background: #2bbec9
 		color: #fff
+		.title
+			text-align: left
+			width: 30%
+			position: relative
+			left: 65%
+			top: 40%
+			line-height: 45px
+	&.section-03
+		color: #fff
+		.title
+			text-align: left
+			width: 20%
+			position: relative
+			left: 75%
+			top: 40%
+			line-height: 45px
 	&.section-04
-		background: #2bbec9
 	&.section-05
-		background: #f0704b
 		color: #fff
 		.title
 			top: 100%
 			&.slide
-				+animation(slist00 0.7s 3.2s 1 forwards ease-out)
+				+animation(slist00 0.7s 1s 1 forwards ease-out)
 				+keyframes(slist00)
 					0%
 						top: 100%
 					100%
 						top: 55%
 	&.section-06
-		background: #8FDEE3
+		background: rgba(255,255,255,0.8)
 		.says
 			text-align: center
-			margin-top: 200px
+			margin-top: 10%
 			li
 				display: inline-block
 				width: 300px
@@ -107,7 +128,15 @@ section
 					background: #56638D
 					display: block
 					margin: 20px auto
+					background-size: cover
 					+border-radius(50%)
+				h3
+					font-size: 18px
+					line-height: 35px
+					color: #56638D
+				h4
+					font-size: 13px
+					color: #666
 				.quote
 					font-family: georgia
 					font-size: 30px
@@ -123,8 +152,27 @@ section
 						font-size: 50px
 						font-size: 40px
 	&.section-07
-		background: #f0704b
-		color: #fff
+		.contact
+			background: #fff
+			width: 450px
+			padding: 15px
+			position: relative
+			margin: auto
+			color: #333
+			+border-radius(5px)
+			h1
+				line-height: 100px
+				color: #f0704b
+				border-bottom: 1px #ccc solid
+			ul
+				width: 300px
+				margin: 30px auto
+				text-align: left
+				li
+					font-size: 19px
+					line-height: 35px
+					i
+						color: #2ebd59
 .phone
 	width: 250px
 	height: 514px
@@ -212,18 +260,23 @@ section
 			width: 90px
 			height: 90px
 			content: ''
-			background-size: 100%
+			background-size: 90px 90px
+			background-position: center
 			z-index: 5
 			top: 500px
 			left: 316px
 			opacity: 0
 			+bg(app-icon,svg)
-			+animation(apps02 1.2s 2.4s 1 forwards ease-in)
+			+animation(apps02 0.5s 2.4s 1 forwards ease-out)
 			+keyframes(apps02)
 				0%
 					opacity: 0
+					+border-radius(50%)
+					+transform(scale(0))
 				100%
 					opacity: 1
+					+border-radius(14px)
+					+transform(scale(1))
 	.game
 		opacity: 0
 		width: 215px
@@ -289,15 +342,6 @@ section
 	overflow: hidden
 	display: none
 	white-space: nowrap
-	&.slide
-		+animation(slist01 0.8s 3.2s 1 forwards ease-out)
-		+keyframes(slist01)
-			0%
-				top: 0
-				+transform(scale(1))
-			100%
-				+transform(scale(0.8))
-				top: -100%
 	ul
 		text-align: center
 		position: absolute
@@ -305,38 +349,38 @@ section
 		left: 50%
 		margin-left: -9000px
 		&.list
-			+animation(plist01 1s 1s 1 forwards ease-out)
+			+animation(plist01 2.5s 0s 1 forwards ease-out)
 			+keyframes(plist01)
 				0%	
 					top: 0
 					+transform(scale(1))
 				100%
-					top: -98%
-					+transform(scale(0.06))
+					top: -170%
+					+transform(scale(0.001))
 			li
 				opacity: 1 !important
 		&:nth-of-type(2)
 			top: 100%
 			&.list
-				+animation(plist02 1s 1.2s 1 forwards ease-out)
+				+animation(plist02 2.5s 0.2s 1 forwards ease-out)
 				+keyframes(plist02)
 					0%
 						top: 100%
 						+transform(scale(1))
 					100%
-						+transform(scale(0.13))
-						top: -75%
+						+transform(scale(0.01))
+						top: -160%
 		&:nth-of-type(3)
 			top: 100%
 			&.list
-				+animation(plist03 1s 1.4s 1 forwards ease-out)
+				+animation(plist03 2.5s 0.4s 1 forwards ease-out)
 				+keyframes(plist03)
 					0%
 						top: 200%
 						+transform(scale(1))
 					100%
-						+transform(scale(0.2))
-						top: -45%
+						+transform(scale(0.05))
+						top: -140%
 	li
 		width: 600px
 		height: 1234px
@@ -351,40 +395,79 @@ section
 	position: fixed
 	z-index: 25
 	width: 100%
-	top: 30%
-	&.slide
-		+animation(slist02 0.7s 3.2s 1 forwards ease-out)
-		+keyframes(slist02)
-			0%
-				top: 30%
-				+transform(scale(1))
-			100%
-				top: 0
-				+transform(scale(0.6))
+	top: 5%
 	.counter
 		text-align: center
-		font-size: 100px
-		padding-top: 320px
-		color: #e04127
+		font-size: 80px
+		padding-top: 230px
+		color: #FFF652
 	span
 		position: relative
 		width: 1500px
-		height: 50px
+		height: 0px
+		font-size: 0
 		background-size: 100%
+		background-position: center bottom
 		display: block
 		margin: auto
 		top: 1000px
 		+bg(growth,svg)
 		&.show-g
 			+transition(1s)
-			+transition-delay(1.5s)
-			width: 500px
-			height: 312px
+			+transition-delay(0.5s)
+			width: 350px
+			height: 218px
 			top: 0
+	.fade
+		+transform(translateY(-1000px))
 .fade
 	+transition(0.3s)
 	opacity: 0
 
+
+@media only screen and (max-width: 560px)
+	section
+		.title
+			h1
+				font-size: 28px
+				line-height: 55px
+			h3
+				font-size: 19px
+	.phone
+		&.sc-02
+			+transform(translateY(0px) scale(0.8))
+		&.sc-03
+			+transform(translateY(-320px) scale(0.55))
+	.phones
+		ul
+			+transform(translateY(-320px) scale(0.55))
+	.growth
+		+transform(scale(0.55))
+		span
+			background-position: center bottom
+			&.show-g
+				width: 100%
+	section
+		width: 100%
+		overflow: hidden
+		&.section-06
+			.says
+				width: 100%
+				overflow-x: auto
+				white-space: nowrap
+			li
+				display: inline-block
+				width: 100%
+				white-space: normal
+
+		&.section-07
+			.contact
+				width: 80%
+				ul
+					li
+						font-size: 16px
+.zfront
+	z-index: 40
 
 
 

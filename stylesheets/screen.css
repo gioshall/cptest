@@ -58,6 +58,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-family: helvetica, "LiHei Pro", "Heiti TC", "微軟正黑體";
   overflow: hidden;
+  background-image: url("../img/bg-c.jpg");
+  background-repeat: no-repeat;
+  background-size: 130% auto;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .nav {
@@ -69,7 +74,6 @@ body {
 .nav .sub-nav {
   position: relative;
   overflow: hidden;
-  font-size: 0;
   margin: -7px 0;
   padding: 0;
   height: 135px;
@@ -86,16 +90,21 @@ body {
   height: 0;
 }
 .nav li {
-  width: 25px;
-  height: 25px;
-  font-size: 0;
+  width: 40px;
+  height: 40px;
   margin: 15px auto;
+  line-height: 40px;
   background: #fff;
   cursor: pointer;
   position: relative;
+  color: #f0704b;
+  font-size: 22px;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+}
+.nav li a {
+  color: #f0704b;
 }
 .nav li.active {
   background: #FFF652;
@@ -103,30 +112,36 @@ body {
 .nav li.sub {
   width: 15px;
   height: 15px;
+  position: relative;
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+.nav li.sub a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
-section {
+.section {
   height: 100vh;
   width: 100%;
   position: relative;
   text-align: center;
 }
-section .title {
+.section .title {
   position: relative;
   top: 15%;
 }
-section .title h1 {
+.section .title h1 {
   font-size: 50px;
   line-height: 75px;
 }
-section .title h3 {
+.section .title h3 {
   font-size: 30px;
 }
-section .more {
+.section .more {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -135,7 +150,7 @@ section .more {
   border: 3px #fff solid;
   font-size: 30px;
   position: relative;
-  top: 75%;
+  top: 60%;
   opacity: 0;
   cursor: pointer;
   -moz-transition: 0.4s;
@@ -150,34 +165,44 @@ section .more {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-section .more.slide {
+.section .more.slide {
   opacity: 1;
 }
-section.section-01 {
-  background: #f0704b;
+.section.section-01 {
   color: #fff;
 }
-section.section-02 {
-  background: #eaeaea;
-}
-section.section-03 {
-  background: #2bbec9;
+.section.section-02 {
   color: #fff;
 }
-section.section-04 {
-  background: #2bbec9;
+.section.section-02 .title {
+  text-align: left;
+  width: 30%;
+  position: relative;
+  left: 65%;
+  top: 40%;
+  line-height: 45px;
 }
-section.section-05 {
-  background: #f0704b;
+.section.section-03 {
   color: #fff;
 }
-section.section-05 .title {
+.section.section-03 .title {
+  text-align: left;
+  width: 20%;
+  position: relative;
+  left: 75%;
+  top: 40%;
+  line-height: 45px;
+}
+.section.section-05 {
+  color: #fff;
+}
+.section.section-05 .title {
   top: 100%;
 }
-section.section-05 .title.slide {
-  -moz-animation: slist00 0.7s 3.2s 1 forwards ease-out;
-  -webkit-animation: slist00 0.7s 3.2s 1 forwards ease-out;
-  animation: slist00 0.7s 3.2s 1 forwards ease-out;
+.section.section-05 .title.slide {
+  -moz-animation: slist00 0.7s 1s 1 forwards ease-out;
+  -webkit-animation: slist00 0.7s 1s 1 forwards ease-out;
+  animation: slist00 0.7s 1s 1 forwards ease-out;
 }
 @-moz-keyframes slist00 {
   0% {
@@ -203,49 +228,83 @@ section.section-05 .title.slide {
     top: 55%;
   }
 }
-section.section-06 {
-  background: #8FDEE3;
+.section.section-06 {
+  background: rgba(255, 255, 255, 0.8);
 }
-section.section-06 .says {
+.section.section-06 .says {
   text-align: center;
-  margin-top: 200px;
+  margin-top: 10%;
 }
-section.section-06 .says li {
+.section.section-06 .says li {
   display: inline-block;
   width: 300px;
   margin: 30px;
   vertical-align: top;
 }
-section.section-06 .says li .prt {
+.section.section-06 .says li .prt {
   width: 250px;
   height: 250px;
   background: #56638D;
   display: block;
   margin: 20px auto;
+  background-size: cover;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-section.section-06 .says li .quote {
+.section.section-06 .says li h3 {
+  font-size: 18px;
+  line-height: 35px;
+  color: #56638D;
+}
+.section.section-06 .says li h4 {
+  font-size: 13px;
+  color: #666;
+}
+.section.section-06 .says li .quote {
   font-family: georgia;
   font-size: 30px;
   line-height: 40px;
 }
-section.section-06 .says li .quote:before {
+.section.section-06 .says li .quote:before {
   content: "“";
   color: #999;
   font-size: 50px;
   font-size: 40px;
 }
-section.section-06 .says li .quote:after {
+.section.section-06 .says li .quote:after {
   content: "”";
   color: #999;
   font-size: 50px;
   font-size: 40px;
 }
-section.section-07 {
-  background: #f0704b;
-  color: #fff;
+.section.section-07 .contact {
+  background: #fff;
+  width: 450px;
+  padding: 15px;
+  position: relative;
+  margin: auto;
+  color: #333;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.section.section-07 .contact h1 {
+  line-height: 100px;
+  color: #f0704b;
+  border-bottom: 1px #ccc solid;
+}
+.section.section-07 .contact ul {
+  width: 300px;
+  margin: 30px auto;
+  text-align: left;
+}
+.section.section-07 .contact ul li {
+  font-size: 19px;
+  line-height: 35px;
+}
+.section.section-07 .contact ul li i {
+  color: #2ebd59;
 }
 
 .phone {
@@ -422,39 +481,70 @@ section.section-07 {
   width: 90px;
   height: 90px;
   content: "";
-  background-size: 100%;
+  background-size: 90px 90px;
+  background-position: center;
   z-index: 5;
   top: 500px;
   left: 316px;
   opacity: 0;
   background-image: url("../img/app-icon.svg");
   background-repeat: no-repeat;
-  -moz-animation: apps02 1.2s 2.4s 1 forwards ease-in;
-  -webkit-animation: apps02 1.2s 2.4s 1 forwards ease-in;
-  animation: apps02 1.2s 2.4s 1 forwards ease-in;
+  -moz-animation: apps02 0.5s 2.4s 1 forwards ease-out;
+  -webkit-animation: apps02 0.5s 2.4s 1 forwards ease-out;
+  animation: apps02 0.5s 2.4s 1 forwards ease-out;
 }
 @-moz-keyframes apps02 {
   0% {
     opacity: 0;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transform: scale(0);
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    -moz-border-radius: 14px;
+    border-radius: 14px;
+    -moz-transform: scale(1);
+    transform: scale(1);
   }
 }
 @-webkit-keyframes apps02 {
   0% {
     opacity: 0;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    -webkit-border-radius: 14px;
+    border-radius: 14px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 @keyframes apps02 {
   0% {
     opacity: 0;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
   }
   100% {
     opacity: 1;
+    -moz-border-radius: 14px;
+    -webkit-border-radius: 14px;
+    border-radius: 14px;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 .phone .game {
@@ -585,51 +675,6 @@ section.section-07 {
   display: none;
   white-space: nowrap;
 }
-.phones.slide {
-  -moz-animation: slist01 0.8s 3.2s 1 forwards ease-out;
-  -webkit-animation: slist01 0.8s 3.2s 1 forwards ease-out;
-  animation: slist01 0.8s 3.2s 1 forwards ease-out;
-}
-@-moz-keyframes slist01 {
-  0% {
-    top: 0;
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    -moz-transform: scale(0.8);
-    transform: scale(0.8);
-    top: -100%;
-  }
-}
-@-webkit-keyframes slist01 {
-  0% {
-    top: 0;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    top: -100%;
-  }
-}
-@keyframes slist01 {
-  0% {
-    top: 0;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    top: -100%;
-  }
-}
 .phones ul {
   text-align: center;
   position: absolute;
@@ -638,9 +683,9 @@ section.section-07 {
   margin-left: -9000px;
 }
 .phones ul.list {
-  -moz-animation: plist01 1s 1s 1 forwards ease-out;
-  -webkit-animation: plist01 1s 1s 1 forwards ease-out;
-  animation: plist01 1s 1s 1 forwards ease-out;
+  -moz-animation: plist01 2.5s 0s 1 forwards ease-out;
+  -webkit-animation: plist01 2.5s 0s 1 forwards ease-out;
+  animation: plist01 2.5s 0s 1 forwards ease-out;
 }
 @-moz-keyframes plist01 {
   0% {
@@ -649,9 +694,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    top: -98%;
-    -moz-transform: scale(0.06);
-    transform: scale(0.06);
+    top: -170%;
+    -moz-transform: scale(0.001);
+    transform: scale(0.001);
   }
 }
 @-webkit-keyframes plist01 {
@@ -661,9 +706,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    top: -98%;
-    -webkit-transform: scale(0.06);
-    transform: scale(0.06);
+    top: -170%;
+    -webkit-transform: scale(0.001);
+    transform: scale(0.001);
   }
 }
 @keyframes plist01 {
@@ -675,11 +720,11 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    top: -98%;
-    -moz-transform: scale(0.06);
-    -ms-transform: scale(0.06);
-    -webkit-transform: scale(0.06);
-    transform: scale(0.06);
+    top: -170%;
+    -moz-transform: scale(0.001);
+    -ms-transform: scale(0.001);
+    -webkit-transform: scale(0.001);
+    transform: scale(0.001);
   }
 }
 .phones ul.list li {
@@ -689,9 +734,9 @@ section.section-07 {
   top: 100%;
 }
 .phones ul:nth-of-type(2).list {
-  -moz-animation: plist02 1s 1.2s 1 forwards ease-out;
-  -webkit-animation: plist02 1s 1.2s 1 forwards ease-out;
-  animation: plist02 1s 1.2s 1 forwards ease-out;
+  -moz-animation: plist02 2.5s 0.2s 1 forwards ease-out;
+  -webkit-animation: plist02 2.5s 0.2s 1 forwards ease-out;
+  animation: plist02 2.5s 0.2s 1 forwards ease-out;
 }
 @-moz-keyframes plist02 {
   0% {
@@ -700,9 +745,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -moz-transform: scale(0.13);
-    transform: scale(0.13);
-    top: -75%;
+    -moz-transform: scale(0.01);
+    transform: scale(0.01);
+    top: -160%;
   }
 }
 @-webkit-keyframes plist02 {
@@ -712,9 +757,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(0.13);
-    transform: scale(0.13);
-    top: -75%;
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+    top: -160%;
   }
 }
 @keyframes plist02 {
@@ -726,20 +771,20 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -moz-transform: scale(0.13);
-    -ms-transform: scale(0.13);
-    -webkit-transform: scale(0.13);
-    transform: scale(0.13);
-    top: -75%;
+    -moz-transform: scale(0.01);
+    -ms-transform: scale(0.01);
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+    top: -160%;
   }
 }
 .phones ul:nth-of-type(3) {
   top: 100%;
 }
 .phones ul:nth-of-type(3).list {
-  -moz-animation: plist03 1s 1.4s 1 forwards ease-out;
-  -webkit-animation: plist03 1s 1.4s 1 forwards ease-out;
-  animation: plist03 1s 1.4s 1 forwards ease-out;
+  -moz-animation: plist03 2.5s 0.4s 1 forwards ease-out;
+  -webkit-animation: plist03 2.5s 0.4s 1 forwards ease-out;
+  animation: plist03 2.5s 0.4s 1 forwards ease-out;
 }
 @-moz-keyframes plist03 {
   0% {
@@ -748,9 +793,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -moz-transform: scale(0.2);
-    transform: scale(0.2);
-    top: -45%;
+    -moz-transform: scale(0.05);
+    transform: scale(0.05);
+    top: -140%;
   }
 }
 @-webkit-keyframes plist03 {
@@ -760,9 +805,9 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    top: -45%;
+    -webkit-transform: scale(0.05);
+    transform: scale(0.05);
+    top: -140%;
   }
 }
 @keyframes plist03 {
@@ -774,11 +819,11 @@ section.section-07 {
     transform: scale(1);
   }
   100% {
-    -moz-transform: scale(0.2);
-    -ms-transform: scale(0.2);
-    -webkit-transform: scale(0.2);
-    transform: scale(0.2);
-    top: -45%;
+    -moz-transform: scale(0.05);
+    -ms-transform: scale(0.05);
+    -webkit-transform: scale(0.05);
+    transform: scale(0.05);
+    top: -140%;
   }
 }
 .phones li {
@@ -799,64 +844,21 @@ section.section-07 {
   position: fixed;
   z-index: 25;
   width: 100%;
-  top: 30%;
-}
-.growth.slide {
-  -moz-animation: slist02 0.7s 3.2s 1 forwards ease-out;
-  -webkit-animation: slist02 0.7s 3.2s 1 forwards ease-out;
-  animation: slist02 0.7s 3.2s 1 forwards ease-out;
-}
-@-moz-keyframes slist02 {
-  0% {
-    top: 30%;
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    top: 0;
-    -moz-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-}
-@-webkit-keyframes slist02 {
-  0% {
-    top: 30%;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    top: 0;
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-  }
-}
-@keyframes slist02 {
-  0% {
-    top: 30%;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  100% {
-    top: 0;
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    transform: scale(0.6);
-  }
+  top: 5%;
 }
 .growth .counter {
   text-align: center;
-  font-size: 100px;
-  padding-top: 320px;
-  color: #e04127;
+  font-size: 80px;
+  padding-top: 230px;
+  color: #FFF652;
 }
 .growth span {
   position: relative;
   width: 1500px;
-  height: 50px;
+  height: 0px;
+  font-size: 0;
   background-size: 100%;
+  background-position: center bottom;
   display: block;
   margin: auto;
   top: 1000px;
@@ -868,13 +870,19 @@ section.section-07 {
   -o-transition: 1s;
   -webkit-transition: 1s;
   transition: 1s;
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  -webkit-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-  width: 500px;
-  height: 312px;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  width: 350px;
+  height: 218px;
   top: 0;
+}
+.growth .fade {
+  -moz-transform: translateY(-1000px);
+  -ms-transform: translateY(-1000px);
+  -webkit-transform: translateY(-1000px);
+  transform: translateY(-1000px);
 }
 
 .fade {
@@ -883,4 +891,71 @@ section.section-07 {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   opacity: 0;
+}
+
+@media only screen and (max-width: 560px) {
+  section .title h1 {
+    font-size: 28px;
+    line-height: 55px;
+  }
+  section .title h3 {
+    font-size: 19px;
+  }
+
+  .phone.sc-02 {
+    -moz-transform: translateY(0px) scale(0.8);
+    -ms-transform: translateY(0px) scale(0.8);
+    -webkit-transform: translateY(0px) scale(0.8);
+    transform: translateY(0px) scale(0.8);
+  }
+  .phone.sc-03 {
+    -moz-transform: translateY(-320px) scale(0.55);
+    -ms-transform: translateY(-320px) scale(0.55);
+    -webkit-transform: translateY(-320px) scale(0.55);
+    transform: translateY(-320px) scale(0.55);
+  }
+
+  .phones ul {
+    -moz-transform: translateY(-320px) scale(0.55);
+    -ms-transform: translateY(-320px) scale(0.55);
+    -webkit-transform: translateY(-320px) scale(0.55);
+    transform: translateY(-320px) scale(0.55);
+  }
+
+  .growth {
+    -moz-transform: scale(0.55);
+    -ms-transform: scale(0.55);
+    -webkit-transform: scale(0.55);
+    transform: scale(0.55);
+  }
+  .growth span {
+    background-position: center bottom;
+  }
+  .growth span.show-g {
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+    overflow: hidden;
+  }
+  section.section-06 .says {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  section.section-06 li {
+    display: inline-block;
+    width: 100%;
+    white-space: normal;
+  }
+  section.section-07 .contact {
+    width: 80%;
+  }
+  section.section-07 .contact ul li {
+    font-size: 16px;
+  }
+}
+.zfront {
+  z-index: 40;
 }

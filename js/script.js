@@ -1,96 +1,93 @@
-var wHeight = $(window).height();
-$(window).scroll(function(){
-	var scroll = $(window).scrollTop();
-    //console.log(scroll)
-    if ( scroll >= wHeight*0.9 ) {	
-    	$('.phone').addClass('sc-02');
-    	$('.game').addClass('show');  	
-    } else {
-    	$('.phone').removeClass('sc-02');
-    	$('.game').removeClass('show');
-    }
-    if ( scroll >= wHeight*1.9 ) {
-    	$('.phone').addClass('sc-03');
-    	$('.show').addClass('store'); 	
-    } else {
-    	$('.phone').removeClass('sc-03');
-    	$('.show').removeClass('store');
-    }
-    if ( scroll >= wHeight*3.9 ) {
-        $('.phones').show();
-        $('.phone').delay(1000).hide();  
-    } else {
-        $('.phones').hide();
-        $('.phone').show();
-    }
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+        anchors: ['intro', 'intro-game', 'intro-buy', 'intro-growth', 'quotes', 'contact'],
+        menu: '.nav',
+        scrollingSpeed: 600,
+        resize: true,
+        // loopTop: true,
+        // loopBottom: true
 
-    if ( $('.phones').attr('style') == 'display: block;' ) { 
-        $('.phones ul').addClass('list');
-        $('.growth span').addClass('show-g');
-        $('.phones,.growth,.section-05 .title,.more').addClass('slide');
-    } else {
-        $('.phones ul').removeClass('list');
-        $('.growth span').removeClass('show-g');
-        $('.phones,.growth,.section-05 .title,.more').removeClass('slide');
-    }
-});
+        afterLoad: function(anchorLink, index) {
+            console.log(index);
 
-for (var i = 1; i <= 15; i++) {
-    $('.phones ul').append('<li></li>');
-};
+            //animation
 
+            if (index >= 2) {
+                $('.phone').addClass('sc-02');
+                $('.game').addClass('show');
+            } else {
+                $('.phone').removeClass('sc-02');
+                $('.game').removeClass('show');
+            }
 
-$(document).ready(function($) {
-$(window).scrollTop(0);
-$('.phones,.growth').removeClass('fade');
-$body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-});
-function cpclick1(){
-    $body.animate( { scrollTop: $('.section-01').offset().top}, 500);
-    $('.phones,.growth,.sub-nav').removeClass('fade');
-    $('.nav li').removeClass('active');
-    $('.sub-nav li:nth-of-type(1)').addClass('active');
-};
-$('.phone').after().click(function(){
-    $body.animate( { scrollTop: $('.section-02').offset().top}, 500);
-    $('.nav li').removeClass('active');
-    $('.sub-nav li:nth-of-type(2)').addClass('active');
-});
-function cpclick2(){
-    $body.animate( { scrollTop: $('.section-02').offset().top}, 500);
-    $('.nav li').removeClass('active');
-    $('.sub-nav li:nth-of-type(2)').addClass('active');
-};
-function cpclick3(){
-    $body.animate( { scrollTop: $('.section-03').offset().top}, 500);
-    $('.nav li').removeClass('active');
-    $('.sub-nav li:nth-of-type(3)').addClass('active');
-};
-function cpclick5(){
-    $body.animate( { scrollTop: $('.section-05').offset().top}, 500);
-    $('.nav li').removeClass('active');
-    $('.sub-nav li:nth-of-type(4)').addClass('active');
-};
-function cpclick6(){
-    $body.animate( { scrollTop: $('.section-06').offset().top}, 500);
-    $('.phones,.growth,.sub-nav').addClass('fade');
-    $('.nav li').removeClass('active');
-    $('.nav li:nth-of-type(2)').addClass('active');
-};
-function cpclick7(){
-    $body.animate( { scrollTop: $('.section-07').offset().top}, 500);
-    $('.phones,.growth,.sub-nav').addClass('fade');
-    $('.nav li').removeClass('active');
-    $('.nav li:nth-of-type(3)').addClass('active');
-};
+            if (index == 3) {
+                $('.phone').addClass('sc-03');
+                $('.show').addClass('store');
+            } else {
+                $('.phone').removeClass('sc-03');
+                $('.show').removeClass('store');
+            }
+            
+            if (index == 4) {
+                $('.growth span').append('<p class="counter"></p>').addClass('show-g');
+                // counter
+                $({
+                    countNum: $('.counter').text()
+                }).animate({
+                    countNum: 999999
+                }, {
+                    duration: 5000,
+                    easing: 'linear',
+                    step: function() {
+                        $('.counter').text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $('.counter').text(this.countNum);
+                    }
+                });
+            } else {
+                $('.growth span').removeClass('show-g').empty();
+            }
 
-$({countNum: $('.counter').text()}).animate({countNum: 999999}, {
-  duration: 6000,
-  easing:'linear',
-  step: function() {
-    $('.counter').text(Math.floor(this.countNum));
-  },
-  complete: function() {
-    $('.counter').text(this.countNum);
-  }
+            if (index >= 4) {
+                $('.phones').show();
+                $('.phones,.growth').removeClass('fade');
+                $('.phone').hide();
+                $('.phones ul').addClass('list');               
+                $('.section-05 .title,.more').addClass('slide');
+                $('.fullpage-wrapper').delay(3000).addClass('zfront');
+            } else {
+                $('.phones').hide();
+                $('.phones,.growth').addClass('fade');
+                $('.phone').show();
+                $('.phones ul').removeClass('list');
+                $('.section-05 .title,.more').removeClass('slide');
+                $('.fullpage-wrapper').removeClass('zfront')
+            }
+
+            if (index >= 5) {
+                $('.phones,.growth,.sub-nav').addClass('fade');
+                
+            } else {
+                $('.phones,.growth,.sub-nav').removeClass('fade');
+
+            }
+        }
+    });
+    for (var i = 1; i <= 15; i++) {
+        $('.phones ul').append('<li></li>');
+    };
+    $('#moveTo').click(function(e) {
+        e.preventDefault();
+        $.fn.fullpage.moveTo(1);
+        //$('.sub-nav').removeClass('fade');
+    });
+    $('.phone').after().click(function(e) {
+        e.preventDefault();
+        $.fn.fullpage.moveTo(2);
+    });
+    $('.more').after().click(function(e) {
+        e.preventDefault();
+        $.fn.fullpage.moveTo(5);
+    });
 });
