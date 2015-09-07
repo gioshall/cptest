@@ -79,6 +79,8 @@ body
 		+transition-delay(4s)
 		+border-radius(50%)
 		&.slide
+			+transition(0.4s)
+			+transition-delay(4s)
 			opacity: 1
 	&.section-01
 		color: #fff
@@ -106,7 +108,7 @@ body
 		.title
 			top: 100%
 			&.slide
-				+animation(slist00 0.7s 1s 1 forwards ease-out)
+				+animation(slist00 0.7s 2.6s 1 forwards ease-out)
 				+keyframes(slist00)
 					0%
 						top: 100%
@@ -355,32 +357,32 @@ body
 					top: 0
 					+transform(scale(1))
 				100%
-					top: -170%
-					+transform(scale(0.001))
+					top: -100%
+					+transform(scale(0))
 			li
 				opacity: 1 !important
 		&:nth-of-type(2)
 			top: 100%
 			&.list
-				+animation(plist02 2.5s 0.2s 1 forwards ease-out)
+				+animation(plist02 2.5s 0.4s 1 forwards ease-out)
 				+keyframes(plist02)
 					0%
 						top: 100%
 						+transform(scale(1))
 					100%
-						+transform(scale(0.01))
-						top: -160%
+						+transform(scale(0))
+						top: -95%
 		&:nth-of-type(3)
 			top: 100%
 			&.list
-				+animation(plist03 2.5s 0.4s 1 forwards ease-out)
+				+animation(plist03 2.5s 0.8s 1 forwards ease-out)
 				+keyframes(plist03)
 					0%
 						top: 200%
 						+transform(scale(1))
 					100%
-						+transform(scale(0.05))
-						top: -140%
+						+transform(scale(0))
+						top: -90%
 	li
 		width: 600px
 		height: 1234px
@@ -392,7 +394,7 @@ body
 		&:nth-of-type(8)
 			opacity: 1
 .growth
-	position: fixed
+	position: absolute
 	z-index: 25
 	width: 100%
 	top: 5%
@@ -413,17 +415,18 @@ body
 		top: 1000px
 		+bg(growth,svg)
 		&.show-g
-			+transition(1s)
-			+transition-delay(0.5s)
+			+transition(2.8s)
+			+transition-delay(1.6s)
 			width: 350px
 			height: 218px
 			top: 0
 	&.fade
-		+transform(translateY(-1000px))
+		
 .fade
 	+transition(0.3s)
 	opacity: 0
-
+.zfront
+	z-index: 40
 
 @media only screen and (max-width: 560px)
 	section
@@ -466,8 +469,7 @@ body
 				ul
 					li
 						font-size: 16px
-.zfront
-	z-index: 40
+
 
 
 

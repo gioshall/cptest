@@ -2,17 +2,17 @@ $(document).ready(function() {
     $('#fullpage').fullpage({
         anchors: ['intro', 'intro-game', 'intro-buy', 'intro-growth', 'quotes', 'contact'],
         menu: '.nav',
-        scrollingSpeed: 600,
+        scrollingSpeed: 800,
         resize: true,
         // loopTop: true,
         // loopBottom: true
 
-        afterLoad: function(anchorLink, index) {
+        onLeave: function(index, nextIndex, direction) {
             console.log(index);
 
             //animation
 
-            if (index >= 2) {
+            if (nextIndex >= 2) {
                 $('.phone').addClass('sc-02');
                 $('.game').addClass('show');
             } else {
@@ -20,15 +20,22 @@ $(document).ready(function() {
                 $('.game').removeClass('show');
             }
 
-            if (index == 3) {
+            if (nextIndex == 3) {
                 $('.phone').addClass('sc-03');
                 $('.show').addClass('store');
-            } else {
+            }
+
+            if (nextIndex < 3) {
                 $('.phone').removeClass('sc-03');
                 $('.show').removeClass('store');
             }
             
-            if (index == 4) {
+            if (index == 3 && direction == 'down') {
+                $('.phones').delay(1500).show(0);
+                $('.phone').delay(1500).hide(0);
+            }
+            
+            if (nextIndex == 4) {
                 $('.growth span').append('<p class="counter"></p>').addClass('show-g');
                 // counter
                 $({
@@ -36,7 +43,7 @@ $(document).ready(function() {
                 }).animate({
                     countNum: 999999
                 }, {
-                    duration: 5000,
+                    duration: 4500,
                     easing: 'linear',
                     step: function() {
                         $('.counter').text(Math.floor(this.countNum));
@@ -49,16 +56,14 @@ $(document).ready(function() {
                $('.growth span').empty();                
             }
 
-            if (index >= 4) {
-                $('.phones').show();
-                $('.phones,.growth').removeClass('fade');
-                $('.phone').hide();
+            if (nextIndex >= 4) {
+                $('.phones').show(0);
+                $('.phone').hide(0);
                 $('.phones ul').addClass('list');               
                 $('.section-05 .title,.more').addClass('slide');
                 $('.fullpage-wrapper').delay(3000).addClass('zfront');
             } else {
                 $('.phones').hide();
-                $('.phones,.growth').addClass('fade');
                 $('.growth span').removeClass('show-g');
                 $('.phone').show();
                 $('.phones ul').removeClass('list');
@@ -66,12 +71,12 @@ $(document).ready(function() {
                 $('.fullpage-wrapper').removeClass('zfront')
             }
 
-            if (index >= 5) {
-                $('.phones,.growth,.sub-nav').addClass('fade');
+            if (nextIndex >= 5) {
+                $('.phone,.phones').hide();
+                $('.phones,.sub-nav').addClass('fade');
                 
             } else {
-                $('.phones,.growth,.sub-nav').removeClass('fade');
-
+                $('.phones,.sub-nav').removeClass('fade');
             }
         }
     });
