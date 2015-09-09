@@ -4,6 +4,8 @@ $(document).ready(function() {
         menu: '.nav',
         scrollingSpeed: 800,
         resize: true,
+        touchSensitivity: 7,
+        normalScrollElementTouchThreshold: 5,
         // loopTop: true,
         // loopBottom: true
 
@@ -97,3 +99,9 @@ $(document).ready(function() {
         $.fn.fullpage.moveTo(5);
     });
 });
+
+// disable scroll on mobile
+
+// document.addEventListener('touchstart', function (e) {
+//     e.preventDefault();
+// });

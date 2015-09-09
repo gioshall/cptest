@@ -6,6 +6,7 @@ body
 	font-family: helvetica,'LiHei Pro','Heiti TC','微軟正黑體'
 	overflow: hidden
 	+bg(bg-c,jpg)
+	background-color: #000
 	background-size: 130% auto
 	background-position: center
 	background-attachment: fixed
@@ -429,7 +430,13 @@ body
 	z-index: 40
 
 @media only screen and (max-width: 560px)
-	section
+	body
+		background-size: auto 100%
+	#fullpage
+		z-index: 100
+	.nav
+		z-index: 150
+	.section
 		.title
 			h1
 				font-size: 28px
@@ -450,7 +457,7 @@ body
 			background-position: center bottom
 			&.show-g
 				width: 100%
-	section
+	.section
 		width: 100%
 		overflow: hidden
 		&.section-06
