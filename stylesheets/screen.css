@@ -58,7 +58,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-family: helvetica, "LiHei Pro", "Heiti TC", "微軟正黑體";
   overflow: hidden;
-  background-image: url("../img/bg-c.jpg");
+  background-image: url("../img/bg-01.svg");
   background-repeat: no-repeat;
   background-color: #000;
   background-size: 130% auto;
@@ -900,7 +900,7 @@ body {
   z-index: 40;
 }
 
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 568px) {
   body {
     background-size: auto 100%;
   }
@@ -921,42 +921,163 @@ body {
     font-size: 19px;
   }
 
-  .phone.sc-02 {
-    -moz-transform: translateY(0px) scale(0.8);
-    -ms-transform: translateY(0px) scale(0.8);
-    -webkit-transform: translateY(0px) scale(0.8);
-    transform: translateY(0px) scale(0.8);
+  .phone {
+    -moz-transform: translateY(-100px) scale(0.75);
+    -ms-transform: translateY(-100px) scale(0.75);
+    -webkit-transform: translateY(-100px) scale(0.75);
+    transform: translateY(-100px) scale(0.75);
   }
-  .phone.sc-03 {
-    -moz-transform: translateY(-320px) scale(0.55);
-    -ms-transform: translateY(-320px) scale(0.55);
-    -webkit-transform: translateY(-320px) scale(0.55);
-    transform: translateY(-320px) scale(0.55);
+  .phone.sc-02, .phone.sc-03 {
+    width: 250px;
+    height: 514px;
+    left: 50%;
+    top: 40%;
+    margin-left: -125px;
+    margin-top: 0px;
+    -moz-transform: translateY(-210px) scale(0.85);
+    -ms-transform: translateY(-210px) scale(0.85);
+    -webkit-transform: translateY(-210px) scale(0.85);
+    transform: translateY(-210px) scale(0.85);
+  }
+  .phone.sc-03:before {
+    width: 37px;
+    height: 37px;
+    background-size: 37px 37px;
+    background-position: center;
+    top: 208px;
+    left: 131px;
+    -moz-animation: apps02 0.5s 2.4s 1 forwards ease-out;
+    -webkit-animation: apps02 0.5s 2.4s 1 forwards ease-out;
+    animation: apps02 0.5s 2.4s 1 forwards ease-out;
+  }
+  @-moz-keyframes apps02 {
+    0% {
+      opacity: 0;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      -moz-transform: scale(0);
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      -moz-border-radius: 7px;
+      border-radius: 7px;
+      -moz-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @-webkit-keyframes apps02 {
+    0% {
+      opacity: 0;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-border-radius: 7px;
+      border-radius: 7px;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes apps02 {
+    0% {
+      opacity: 0;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      -moz-transform: scale(0);
+      -ms-transform: scale(0);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      -moz-border-radius: 7px;
+      -webkit-border-radius: 7px;
+      border-radius: 7px;
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  .phone .game.show {
+    width: 215px;
+    height: 380px;
+    margin: 67px 0 0 17px;
   }
 
   .phones ul {
-    -moz-transform: translateY(-320px) scale(0.55);
-    -ms-transform: translateY(-320px) scale(0.55);
-    -webkit-transform: translateY(-320px) scale(0.55);
-    transform: translateY(-320px) scale(0.55);
+    text-align: center;
+    position: absolute;
+    font-size: 0;
+    left: 50%;
+    width: 250px;
+    height: 514px;
+    top: 40%;
+    margin-left: -125px;
+    margin-top: -210px;
+    -moz-transform: translateY(0px) scale(0.85);
+    -ms-transform: translateY(0px) scale(0.85);
+    -webkit-transform: translateY(0px) scale(0.85);
+    transform: translateY(0px) scale(0.85);
+  }
+  .phones ul.list {
+    display: none;
+    -moz-animation: none;
+    -webkit-animation: none;
+    animation: none;
+  }
+  .phones ul:nth-of-type(1) {
+    display: block;
+  }
+  .phones ul:nth-of-type(1) li {
+    width: 250px;
+    height: 514px;
+    margin: 0;
+    display: none;
+  }
+  .phones ul:nth-of-type(1) li:nth-of-type(1) {
+    display: block;
+    opacity: 1;
   }
 
   .growth {
-    -moz-transform: scale(0.55);
-    -ms-transform: scale(0.55);
-    -webkit-transform: scale(0.55);
-    transform: scale(0.55);
+    top: 0;
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
   }
   .growth span {
     background-position: center bottom;
   }
   .growth span.show-g {
     width: 100%;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
   }
 
   .section {
     width: 100%;
     overflow: hidden;
+  }
+  .section.section-05 {
+    color: #fff;
+    opacity: 0.9;
+  }
+  .section.section-05 .title {
+    top: 50%;
+  }
+  .section.section-05 .title.slide {
+    -moz-animation: none;
+    -webkit-animation: none;
+    animation: none;
   }
   .section.section-06 .says {
     width: 100%;
