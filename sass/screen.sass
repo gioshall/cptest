@@ -10,7 +10,30 @@ body
 	background-size: 130% auto
 	background-position: center
 	background-attachment: fixed
-
+.allbg
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	background-size: 140% auto
+	background-position: center
+	background-attachment: fixed
+	opacity: 0
+	+transition(1s)
+	&.switch
+		background-size: 130% auto
+		opacity: 1
+	&.bg-02
+		+bg(bg-02,svg)
+	&.bg-03
+		+bg(bg-03,svg)
+	&.bg-04
+		+bg(bg-04,svg)
+		+transition(1.8s)
+		z-index: 20
+	&.bg-06
+		// +bg(bg-06,svg)
 .nav
 	position: fixed
 	right: 10px
@@ -115,6 +138,63 @@ body
 						top: 100%
 					100%
 						top: 55%
+		.features
+			position: absolute
+			width: 80%
+			height: 100%
+			top: 0
+			left: 10%
+			li
+				position: absolute
+				width: 200px
+				text-align: center
+				font-size: 15px
+				line-height: 23px
+				opacity: 0
+				+transition(0.6s)
+				i
+					color: #fff652
+					font-weight: bold
+				&:before
+					content: ''
+					width: 150px
+					height: 150px
+					background-size: cover
+					display: block
+					margin: 10px auto
+					+border-radius(50%)
+				&:nth-of-type(1)
+					top: 50px
+					left: 50px
+					&.slide
+						opacity: 1
+						+transition-delay(2s)
+					&:before
+						+bg(Page04_icon_01,svg)
+				&:nth-of-type(2)
+					top: 50px
+					right: 50px
+					&.slide
+						opacity: 1
+						+transition-delay(2.4s)
+					&:before
+						+bg(Page04_icon_02,svg)
+				&:nth-of-type(3)
+					bottom: 50px
+					left: 50px
+					&.slide
+						opacity: 1
+						+transition-delay(2.8s)
+					&:before
+						+bg(Page04_icon_03,svg)
+				&:nth-of-type(4)
+					bottom: 50px
+					right: 50px
+					&.slide
+						opacity: 1
+						+transition-delay(3.2s)
+					&:before
+						+bg(Page04_icon_04,svg)
 	&.section-06
 		background: rgba(255,255,255,0.8)
 		.says
@@ -351,39 +431,39 @@ body
 		font-size: 0
 		left: 50%
 		margin-left: -9000px
-		&.list
-			+animation(plist01 2.5s 0s 1 forwards ease-out)
-			+keyframes(plist01)
-				0%	
-					top: 0
-					+transform(scale(1))
-				100%
-					top: -100%
-					+transform(scale(0))
+		// &.list
+		// 	+animation(plist01 2.5s 0s 1 forwards ease-out)
+		// 	+keyframes(plist01)
+		// 		0%	
+		// 			top: 0
+		// 			+transform(scale(1))
+		// 		100%
+		// 			top: -100%
+		// 			+transform(scale(0))
 			li
 				opacity: 1 !important
-		&:nth-of-type(2)
-			top: 100%
-			&.list
-				+animation(plist02 2.5s 0.4s 1 forwards ease-out)
-				+keyframes(plist02)
-					0%
-						top: 100%
-						+transform(scale(1))
-					100%
-						+transform(scale(0))
-						top: -95%
-		&:nth-of-type(3)
-			top: 100%
-			&.list
-				+animation(plist03 2.5s 0.8s 1 forwards ease-out)
-				+keyframes(plist03)
-					0%
-						top: 200%
-						+transform(scale(1))
-					100%
-						+transform(scale(0))
-						top: -90%
+		// &:nth-of-type(2)
+		// 	top: 100%
+		// 	&.list
+		// 		+animation(plist02 2.5s 0.4s 1 forwards ease-out)
+		// 		+keyframes(plist02)
+		// 			0%
+		// 				top: 100%
+		// 				+transform(scale(1))
+		// 			100%
+		// 				+transform(scale(0))
+		// 				top: -95%
+		// &:nth-of-type(3)
+		// 	top: 100%
+		// 	&.list
+		// 		+animation(plist03 2.5s 0.8s 1 forwards ease-out)
+		// 		+keyframes(plist03)
+		// 			0%
+		// 				top: 200%
+		// 				+transform(scale(1))
+		// 			100%
+		// 				+transform(scale(0))
+		// 				top: -90%
 	li
 		width: 600px
 		height: 1234px
@@ -432,6 +512,10 @@ body
 @media only screen and (max-width: 568px)
 	body
 		background-size: auto 100%
+	.allbg
+		background-size: auto 120%
+		&.switch
+			background-size: auto 100%
 	#fullpage
 		z-index: 100
 	.nav
@@ -512,6 +596,21 @@ body
 	.section
 		width: 100%
 		overflow: hidden
+		&.section-02,
+		&.section-03
+			.title
+				width: 100%
+				left: 0
+				top: 100%
+				margin-top: -90px
+				background: rgba(0,0,0,0.6)
+				h3
+					padding: 10px
+					font-size: 24px
+					line-height: 35px
+		&.section-03
+			.title
+				margin-top: -55px
 		&.section-05
 			color: #fff
 			opacity: .9

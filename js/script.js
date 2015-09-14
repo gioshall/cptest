@@ -17,15 +17,23 @@ $(document).ready(function() {
             if (nextIndex >= 2) {
                 $('.phone').addClass('sc-02');
                 $('.game').addClass('show');
+                $('.bg-02').addClass('switch');
             } else {
                 $('.phone').removeClass('sc-02');
                 $('.game').removeClass('show');
+                $('.bg-02').removeClass('switch');
+            }
+            
+            if (nextIndex >= 3) {
+                $('.bg-03').addClass('switch');
+            } else {
+                $('.bg-03').removeClass('switch');
             }
 
             if (nextIndex == 3) {
                 $('.phone').addClass('sc-03');
                 $('.show').addClass('store');
-            }
+            } 
 
             if (nextIndex < 3) {
                 $('.phone').removeClass('sc-03');
@@ -54,29 +62,32 @@ $(document).ready(function() {
                         $('.counter').text(this.countNum);
                     }
                 });
+                $('.bg-04').delay(1500).queue(function(){
+                    $(this).addClass('switch').dequeue();
+                });
             } else {
-               $('.growth span').empty();                
+               $('.growth span').empty();
+               $('.bg-04').removeClass('switch');               
             }
 
             if (nextIndex >= 4) {
                 $('.phones').show(0);
                 $('.phone').hide(0);
                 $('.phones ul').addClass('list');               
-                $('.section-05 .title,.more').addClass('slide');
-                $('.fullpage-wrapper').delay(3000).addClass('zfront');
+                $('.section-05 .title,.more,.features li').addClass('slide');
+                $('.fullpage-wrapper').delay(3000).addClass('zfront');               
             } else {
                 $('.phones').hide();
                 $('.growth span').removeClass('show-g');
                 $('.phone').show();
                 $('.phones ul').removeClass('list');
-                $('.section-05 .title,.more').removeClass('slide');
-                $('.fullpage-wrapper').removeClass('zfront')
+                $('.section-05 .title,.more,.features li').removeClass('slide');
+                $('.fullpage-wrapper').removeClass('zfront');               
             }
 
             if (nextIndex >= 5) {
                 $('.phone,.phones').hide();
-                $('.phones,.sub-nav').addClass('fade');
-                
+                $('.phones,.sub-nav').addClass('fade');              
             } else {
                 $('.phones,.sub-nav').removeClass('fade');
             }
