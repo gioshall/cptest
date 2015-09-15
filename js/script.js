@@ -10,9 +10,12 @@ $(document).ready(function() {
         // loopBottom: true
 
         onLeave: function(index, nextIndex, direction) {
-            console.log(index);
+            //console.log(index);
 
             //animation
+            if (nextIndex >= 1) {
+                $('.bg-01').removeClass('gray');
+            }
 
             if (nextIndex >= 2) {
                 $('.phone').addClass('sc-02');
@@ -80,7 +83,8 @@ $(document).ready(function() {
 
             if (nextIndex >= 5) {
                 $('.phone,.sub-nav').addClass('fade');
-                $('.bg-01, .bg-02, .bg-03, .bg-04').removeClass('switch');
+                $('.allbg').removeClass('switch');
+                $('.bg-01').addClass('gray');
             } else {
                 $('.phone,.sub-nav').removeClass('fade');
             }
@@ -101,5 +105,9 @@ $(document).ready(function() {
     $('.more').after().click(function(e) {
         e.preventDefault();
         $.fn.fullpage.moveTo(5);
+    });
+
+    $('.onoff').click(function(){
+        $('.nav').toggleClass('open')
     });
 });
