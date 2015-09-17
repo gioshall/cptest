@@ -25,7 +25,7 @@ var i18n = {
 
 		'title-partner': ['我們的合作夥伴', '我們的合作夥伴'],
 		'contact-btn': ['聯絡我們', '聯絡我們'],
-		'contact-sub': ['將有專人聯繫，期待與您合作', '將有專人聯繫，期待與您合作'],
+		'contact-sub': ['將有專人聯繫，期待與您合作', '將有專人聯繫，期待與您合作']
 	},
 
 	getText: function(msg, lang) {
