@@ -41,7 +41,7 @@ $(document).ready(function() {
                 $('.phone').addClass('blur');
                 $('.bg-04').addClass('switch');             
                 $('.more,.features li').addClass('slide');
-                $('.fullpage-wrapper').delay(3000).addClass('zfront');               
+                $('.fullpage-wrapper').addClass('zfront');               
             } else {
                 $('.phone').removeClass('blur');
                 $('.bg-04').removeClass('switch');
