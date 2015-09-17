@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html lang="zh">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -14,12 +13,15 @@ content="" />
 	<link rel="stylesheet" href="stylesheets/print.css">
 	<link rel="stylesheet" href="stylesheets/screen.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" type="text/css" href="examples.css" />
-
-	<script src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/queryLoader.css" />
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="js/i18n.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/queryLoader.js"></script>
+<script>
+	QueryLoader.init();
+</script>
 </head>
 <body>
 
@@ -52,45 +54,36 @@ content="" />
 	<div class="game"></div>
 </div>
 
-<!-- <div class="phones">
-	<ul></ul>
-	<ul></ul>
-	<ul></ul>
-</div> -->
-
 <!-- section -->
 
 <div id="fullpage">
 	<div class="section section-01" id="section1">
 		<div class="title">
-			<h1>Click 2 Play 隨點即玩</h1>
-			<h3>App 試玩廣告   全新演繹方式</h3>
+			<h1 text="main-title"></h1>
+			<h3 text="sub-title"></h3>
 		</div>
 	</div>
 	<div class="section section-02" id="section2">
 		<div class="title">
-			<h3>點擊 Banner 立即試玩，<br>免安裝、免下載。</h3>
+			<h3 text="description-01"></h3>
 		</div>
 	</div>
 	<div class="section section-03" id="section3">
 		<div class="title">
-			<h3>觸發使用者下載</h3>
+			<h3 text="description-02"></h3>
 		</div>
 	</div>
 	<div class="section section-05" id="section4">
 		<div class="title">
-			<h1>Click 2 Play 隨點即玩</h1>
-			<h3>App 試玩廣告 全新演繹方式</h3>
+			<h1 text="main-title"></h1>
+			<h3 text="sub-title"></h3>
 		</div>
-		<!-- <div class="growth">
-			<span></span>
-		</div> -->
 
 		<ul class="features">
-			<li>強大眼球吸引力<br>有效<i>提升點擊率</i></li>
-			<li><i>HTML5</i> 技術 同時支持<br><i>雙平台</i>及 <i>SDK / API</i> 模式</li>
-			<li>互動化提升<i>用戶體驗</i></li>
-			<li><i>降低投放單位成本</i></li>
+			<li text="features-01"></li>
+			<li text="features-02"></li>
+			<li text="features-03"></li>
+			<li text="features-04"></li>
 		</ul>
 
 		<div class="more">
@@ -99,32 +92,32 @@ content="" />
 	</div>
 	<div class="section section-06" id="section5">
 		<div class="title">
-		<h1>菁英推薦 Click 2 Play</h1>
+		<h1 text="quotes-title"></h1>
 	</div>
 	<ul class="says">
 		<li>
 			<div class="prt" style="background-image: url(https://goo.gl/m6IuVN);"></div>
-			<h3 class="name">Mark Zuckerberg</h3>
-			<h4>CEO, Facebook</h4>
-			<div class="quote">Maybe it's the best solution ever.</div>
+			<h3 text="quote-name-01" class="name"></h3>
+			<h4 text="quote-pos-01"></h4>
+			<div text="quote-01" class="quote"></div>
 		</li>
 		<li>
 			<div class="prt" style="background-image: url(https://goo.gl/UQ4fvn);"></div>
-			<h3 class="name">Tim Cook</h3>
-			<h4>CEO, Apple Inc.</h4>
-			<div class="quote">I'm thrilled, it's amazing.</div>
+			<h3 text="quote-name-02" class="name"></h3>
+			<h4 text="quote-pos-02"></h4>
+			<div text="quote-02" class="quote"></div>
 		</li>
 		<li>
 			<div class="prt" style="background-image: url(http://goo.gl/k4ib3Q);"></div>
-			<h3 class="name">Bono</h3>
-			<h4>Vocals, U2</h4>
-			<div class="quote">I want a cookie.</div>
+			<h3 text="quote-name-03" class="name"></h3>
+			<h4 text="quote-pos-03"></h4>
+			<div text="quote-03" class="quote"></div>
 		</li>
 	</ul>
 	</div>
 	<div class="section section-07" id="section6">
 		<div class="title contact">
-		<h1>我們的合作夥伴</h1>
+		<h1 text="title-partner"></h1>
 		<ul class="clients">
 			<li>
 				<img src="img/clients/bustle.png" >
@@ -145,8 +138,8 @@ content="" />
 				<img src="img/clients/zendesk.png" >
 			</li>
 		</ul>
-		<a class="cbtn" href="mailto:contact@ubitus.net"><i class="fa fa-envelope"></i> 聯絡我們</a>
-		<h3>將有專人聯繫，期待與您合作</h3>
+		<a class="cbtn" href="mailto:contact@ubitus.net"><i class="fa fa-envelope"></i> <span title="contact-btn"></span></a>
+		<h3 title="contact-sub"></h3>
 	</div>
 	</div>
 </div>

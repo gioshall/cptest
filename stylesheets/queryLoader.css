@@ -1,0 +1,14 @@
+.QOverlay {
+	background-image: url("../img/bg-01.svg");
+  	background-repeat: no-repeat;
+  	background-size: cover;
+	z-index: 9999;
+	position: relative;
+}
+
+.QLoader {
+	background-color: #CCCCCC;
+	height: 1px;
+	position: absolute;
+	top: 0;
+}
