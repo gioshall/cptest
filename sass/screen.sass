@@ -295,20 +295,38 @@ body
 			line-height: 45px
 	&.section-03
 		color: #fff
+		overflow: hidden
+		.bg-ptrn
+			position: absolute
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+			opacity: 0
+			+bg(robot-bg,gif)
+			background-repeat: repeat
+			&.fadein
+				+animation(ani-bgptn 1s 3.5s 1 forwards ease-in)
+				+keyframes(ani-bgptn)
+					0%
+						opacity: 0
+					100%
+						opacity: 1
 		.title
 			text-align: left
 			width: 30%
 			position: relative
-			left: 65%
+			left: 60%
 			top: 20%
 			line-height: 45px
 			text-align: center
 		.flow-ftr
 			position: absolute
-			left: 65%
+			left: 60%
 			width: 30%
 			top: 30%
 			text-align: center
+			z-index: 1
 			li
 				width: 100px
 				height: 0
@@ -343,7 +361,8 @@ body
 					+animation(ani-ftr 0.2s 0.8s 1 forwards ease-in)
 				.icon-download
 					+animation(ani-ftr 0.2s 1.9s 1 forwards ease-in)
-
+				.icon-client
+					+animation(ani-ftr 0.2s 3s 1 forwards ease-in)
 		.queue
 			.say
 				position: absolute
@@ -353,21 +372,41 @@ body
 				+transform(scale(0))
 				+bg(icon-mood,svg)
 				background-size: 150px 450px
+			.say-jump
+				position: absolute
+				width: 150px
+				height: 150px
+				top: 40%
+				right: 8%
+				+transform(scale(0))
+				+bg(icon-mood,svg)
+				background-size: 150px 450px
+				background-position: 0 -300px
 			.man
 				position: absolute
 				width: 230px
 				height: 458px
-				left: 10%
+				left: 5%
 				top: 100%
 				+bg(robot-01,png)
 				background-size: 100%
+			.man-jump
+				position: absolute
+				width: 628px
+				height: 500px
+				right: 12%
+				top: 32%
+				background-size: 100%
+				+bg(robot-02,png)
+				background-size: 628px 3000px
+				background-position: 0 500px
 			.man-end
 				position: absolute
-				width: 600px
-				height: 478px
-				right: 10%
-				top: 50%
-				+bg(robot-02,gif)
+				bottom: -100%
+				right: 12%
+				width: 280px
+				height: 364px
+				+bg(robot-03,gif)
 				background-size: 100%
 			&.fadein
 				.say
@@ -385,7 +424,8 @@ body
 							+transform(scale(1))
 						88%
 							+transform(scale(0))
-						
+				.say-jump
+					+animation(ani-say 1.3s 1.8s 1 forwards ease-in)						
 				.man
 					+animation(ani-man 1.3s 0.3s 1 forwards ease-in)
 					+keyframes(ani-man)
@@ -404,6 +444,49 @@ body
 						100%
 							top: 20%
 							+transform(translateX(270px) scale(0.7) rotate(15deg))
+				.man-jump
+					+animation(ani-man2 1.3s 1.8s 1 forwards linear)
+					+keyframes(ani-man2)
+						0%
+							background-position: 0 0
+						4.999%
+							background-position: 0 0px
+						5%
+							background-position: 0 -500px
+						9.999%
+							background-position: 0 -500px
+						10%
+							background-position: 0 -1000px
+						19.999%
+							background-position: 0 -1000px
+						20%
+							background-position: 0 -1500px
+						24.999%
+							background-position: 0 -1500px
+						25%
+							background-position: 0 -2000px
+						29.999%
+							background-position: 0 -2000px
+						30%
+							background-position: 0 -2500px
+						90%
+							background-position: 0 -2500px
+							+transform(translateY(0px))
+						100%
+							background-position: 0 -2500px
+							+transform(translateY(1000px))
+				.man-end
+					+animation(ani-man3 1s 3.1s 1 forwards ease-in)
+					+keyframes(ani-man3)
+						0%
+							bottom: -100%
+						35%
+							bottom: 0
+						45%
+							bottom: -10px
+						100%
+							bottom: -10px
+						
 	&.section-04
 	&.section-05
 		color: #fff
@@ -631,7 +714,7 @@ body
 			opacity: 0
 			+transition(0.3s)
 			+bg(phone-app,svg)
-			+animation(apps01 0.5s 2.3s 1 forwards)
+			+animation(apps01 0.5s 2.6s 1 forwards)
 			+keyframes(apps01)
 				0%
 					opacity: 0
@@ -649,7 +732,7 @@ body
 			left: 287px
 			opacity: 0
 			+bg(app-icon,svg)
-			+animation(apps02 0.4s 2.8s 1 forwards ease-out)
+			+animation(apps02 0.4s 3.1s 1 forwards ease-out)
 			+keyframes(apps02)
 				0%
 					opacity: 0

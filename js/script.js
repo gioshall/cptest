@@ -37,19 +37,20 @@ $(document).ready(function() {
                 $('.bg-03').addClass('switch');
                 $('.phone').addClass('sc-03');
                 $('.show').addClass('store');
-                $('.flow-ftr, .queue').addClass('fadein');
+                $('.bg-ptrn, .flow-ftr, .queue').addClass('fadein');
             } else {
                 $('.bg-03').removeClass('switch');
                 $('.phone').removeClass('sc-03');
                 $('.show').removeClass('store');
-                $('.flow-ftr, .queue').removeClass('fadein');
+                $('.bg-ptrn, .flow-ftr, .queue').removeClass('fadein');
             }
 
             if (nextIndex >= 4) {
                 $('.phone').addClass('blur');
                 $('.bg-04').addClass('switch');             
                 $('.more,.features li').addClass('slide');
-                $('.fullpage-wrapper').addClass('zfront');               
+                $('.fullpage-wrapper').addClass('zfront');
+                $('.bg-ptrn, .flow-ftr, .queue').removeClass('fadein');               
             } else {
                 $('.phone').removeClass('blur');
                 $('.bg-04').removeClass('switch');

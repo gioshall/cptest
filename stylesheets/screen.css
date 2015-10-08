@@ -624,22 +624,64 @@ body {
 }
 .section.section-03 {
   color: #fff;
+  overflow: hidden;
+}
+.section.section-03 .bg-ptrn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background-image: url("../img/robot-bg.gif");
+  background-repeat: no-repeat;
+  background-repeat: repeat;
+}
+.section.section-03 .bg-ptrn.fadein {
+  -moz-animation: ani-bgptn 1s 3.5s 1 forwards ease-in;
+  -webkit-animation: ani-bgptn 1s 3.5s 1 forwards ease-in;
+  animation: ani-bgptn 1s 3.5s 1 forwards ease-in;
+}
+@-moz-keyframes ani-bgptn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes ani-bgptn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ani-bgptn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .section.section-03 .title {
   text-align: left;
   width: 30%;
   position: relative;
-  left: 65%;
+  left: 60%;
   top: 20%;
   line-height: 45px;
   text-align: center;
 }
 .section.section-03 .flow-ftr {
   position: absolute;
-  left: 65%;
+  left: 60%;
   width: 30%;
   top: 30%;
   text-align: center;
+  z-index: 1;
 }
 .section.section-03 .flow-ftr li {
   width: 100px;
@@ -733,6 +775,11 @@ body {
   -webkit-animation: ani-ftr 0.2s 1.9s 1 forwards ease-in;
   animation: ani-ftr 0.2s 1.9s 1 forwards ease-in;
 }
+.section.section-03 .flow-ftr.fadein .icon-client {
+  -moz-animation: ani-ftr 0.2s 3s 1 forwards ease-in;
+  -webkit-animation: ani-ftr 0.2s 3s 1 forwards ease-in;
+  animation: ani-ftr 0.2s 3s 1 forwards ease-in;
+}
 .section.section-03 .queue .say {
   position: absolute;
   width: 150px;
@@ -746,23 +793,50 @@ body {
   background-repeat: no-repeat;
   background-size: 150px 450px;
 }
+.section.section-03 .queue .say-jump {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  right: 8%;
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  background-image: url("../img/icon-mood.svg");
+  background-repeat: no-repeat;
+  background-size: 150px 450px;
+  background-position: 0 -300px;
+}
 .section.section-03 .queue .man {
   position: absolute;
   width: 230px;
   height: 458px;
-  left: 10%;
+  left: 5%;
   top: 100%;
   background-image: url("../img/robot-01.png");
   background-repeat: no-repeat;
   background-size: 100%;
 }
+.section.section-03 .queue .man-jump {
+  position: absolute;
+  width: 628px;
+  height: 500px;
+  right: 12%;
+  top: 32%;
+  background-size: 100%;
+  background-image: url("../img/robot-02.png");
+  background-repeat: no-repeat;
+  background-size: 628px 3000px;
+  background-position: 0 500px;
+}
 .section.section-03 .queue .man-end {
   position: absolute;
-  width: 600px;
-  height: 478px;
-  right: 10%;
-  top: 50%;
-  background-image: url("../img/robot-02.gif");
+  bottom: -100%;
+  right: 12%;
+  width: 280px;
+  height: 364px;
+  background-image: url("../img/robot-03.gif");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -861,6 +935,11 @@ body {
     transform: scale(0);
   }
 }
+.section.section-03 .queue.fadein .say-jump {
+  -moz-animation: ani-say 1.3s 1.8s 1 forwards ease-in;
+  -webkit-animation: ani-say 1.3s 1.8s 1 forwards ease-in;
+  animation: ani-say 1.3s 1.8s 1 forwards ease-in;
+}
 .section.section-03 .queue.fadein .man {
   -moz-animation: ani-man 1.3s 0.3s 1 forwards ease-in;
   -webkit-animation: ani-man 1.3s 0.3s 1 forwards ease-in;
@@ -948,6 +1027,197 @@ body {
     -ms-transform: translateX(270px) scale(0.7) rotate(15deg);
     -webkit-transform: translateX(270px) scale(0.7) rotate(15deg);
     transform: translateX(270px) scale(0.7) rotate(15deg);
+  }
+}
+.section.section-03 .queue.fadein .man-jump {
+  -moz-animation: ani-man2 1.3s 1.8s 1 forwards linear;
+  -webkit-animation: ani-man2 1.3s 1.8s 1 forwards linear;
+  animation: ani-man2 1.3s 1.8s 1 forwards linear;
+}
+@-moz-keyframes ani-man2 {
+  0% {
+    background-position: 0 0;
+  }
+  4.999% {
+    background-position: 0 0px;
+  }
+  5% {
+    background-position: 0 -500px;
+  }
+  9.999% {
+    background-position: 0 -500px;
+  }
+  10% {
+    background-position: 0 -1000px;
+  }
+  19.999% {
+    background-position: 0 -1000px;
+  }
+  20% {
+    background-position: 0 -1500px;
+  }
+  24.999% {
+    background-position: 0 -1500px;
+  }
+  25% {
+    background-position: 0 -2000px;
+  }
+  29.999% {
+    background-position: 0 -2000px;
+  }
+  30% {
+    background-position: 0 -2500px;
+  }
+  90% {
+    background-position: 0 -2500px;
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    background-position: 0 -2500px;
+    -moz-transform: translateY(1000px);
+    transform: translateY(1000px);
+  }
+}
+@-webkit-keyframes ani-man2 {
+  0% {
+    background-position: 0 0;
+  }
+  4.999% {
+    background-position: 0 0px;
+  }
+  5% {
+    background-position: 0 -500px;
+  }
+  9.999% {
+    background-position: 0 -500px;
+  }
+  10% {
+    background-position: 0 -1000px;
+  }
+  19.999% {
+    background-position: 0 -1000px;
+  }
+  20% {
+    background-position: 0 -1500px;
+  }
+  24.999% {
+    background-position: 0 -1500px;
+  }
+  25% {
+    background-position: 0 -2000px;
+  }
+  29.999% {
+    background-position: 0 -2000px;
+  }
+  30% {
+    background-position: 0 -2500px;
+  }
+  90% {
+    background-position: 0 -2500px;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    background-position: 0 -2500px;
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+  }
+}
+@keyframes ani-man2 {
+  0% {
+    background-position: 0 0;
+  }
+  4.999% {
+    background-position: 0 0px;
+  }
+  5% {
+    background-position: 0 -500px;
+  }
+  9.999% {
+    background-position: 0 -500px;
+  }
+  10% {
+    background-position: 0 -1000px;
+  }
+  19.999% {
+    background-position: 0 -1000px;
+  }
+  20% {
+    background-position: 0 -1500px;
+  }
+  24.999% {
+    background-position: 0 -1500px;
+  }
+  25% {
+    background-position: 0 -2000px;
+  }
+  29.999% {
+    background-position: 0 -2000px;
+  }
+  30% {
+    background-position: 0 -2500px;
+  }
+  90% {
+    background-position: 0 -2500px;
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  100% {
+    background-position: 0 -2500px;
+    -moz-transform: translateY(1000px);
+    -ms-transform: translateY(1000px);
+    -webkit-transform: translateY(1000px);
+    transform: translateY(1000px);
+  }
+}
+.section.section-03 .queue.fadein .man-end {
+  -moz-animation: ani-man3 1s 3.1s 1 forwards ease-in;
+  -webkit-animation: ani-man3 1s 3.1s 1 forwards ease-in;
+  animation: ani-man3 1s 3.1s 1 forwards ease-in;
+}
+@-moz-keyframes ani-man3 {
+  0% {
+    bottom: -100%;
+  }
+  35% {
+    bottom: 0;
+  }
+  45% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@-webkit-keyframes ani-man3 {
+  0% {
+    bottom: -100%;
+  }
+  35% {
+    bottom: 0;
+  }
+  45% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -10px;
+  }
+}
+@keyframes ani-man3 {
+  0% {
+    bottom: -100%;
+  }
+  35% {
+    bottom: 0;
+  }
+  45% {
+    bottom: -10px;
+  }
+  100% {
+    bottom: -10px;
   }
 }
 .section.section-05 {
@@ -1217,9 +1487,9 @@ body {
   transition: 0.3s;
   background-image: url("../img/phone-app.svg");
   background-repeat: no-repeat;
-  -moz-animation: apps01 0.5s 2.3s 1 forwards;
-  -webkit-animation: apps01 0.5s 2.3s 1 forwards;
-  animation: apps01 0.5s 2.3s 1 forwards;
+  -moz-animation: apps01 0.5s 2.6s 1 forwards;
+  -webkit-animation: apps01 0.5s 2.6s 1 forwards;
+  animation: apps01 0.5s 2.6s 1 forwards;
 }
 @-moz-keyframes apps01 {
   0% {
@@ -1258,9 +1528,9 @@ body {
   opacity: 0;
   background-image: url("../img/app-icon.svg");
   background-repeat: no-repeat;
-  -moz-animation: apps02 0.4s 2.8s 1 forwards ease-out;
-  -webkit-animation: apps02 0.4s 2.8s 1 forwards ease-out;
-  animation: apps02 0.4s 2.8s 1 forwards ease-out;
+  -moz-animation: apps02 0.4s 3.1s 1 forwards ease-out;
+  -webkit-animation: apps02 0.4s 3.1s 1 forwards ease-out;
+  animation: apps02 0.4s 3.1s 1 forwards ease-out;
 }
 @-moz-keyframes apps02 {
   0% {
