@@ -473,18 +473,18 @@ body {
 }
 
 .contact {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   display: block;
   position: fixed;
   bottom: 15px;
   right: 15px;
-  z-index: 100;
+  z-index: 150;
   background: #E7361A;
   color: #fff;
   text-align: center;
-  line-height: 40px;
-  font-size: 22px;
+  line-height: 60px;
+  font-size: 30px;
   cursor: pointer;
   -moz-transition: 0.2s;
   -o-transition: 0.2s;
@@ -502,10 +502,10 @@ body {
   position: fixed;
   width: 270px;
   height: 330px;
-  z-index: 100;
+  z-index: 150;
   background: #fff;
-  bottom: 60px;
-  right: 25px;
+  bottom: 70px;
+  right: 40px;
   overflow: hidden;
   border: 5px #fff solid;
   opacity: 0;
@@ -1939,18 +1939,37 @@ body {
 
   .allbg {
     background-size: auto 120%;
+    overflow: hidden;
   }
   .allbg.switch {
     background-size: auto 100%;
+  }
+  .allbg.bg-01 {
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+  }
+  .allbg.bg-01.switch {
+    opacity: 0 !important;
+  }
+  .allbg.bg-02 div {
+    display: none;
   }
 
   #fullpage {
     z-index: 100;
   }
 
+  .lang {
+    display: none;
+  }
+
   .nav {
     z-index: 150;
     height: 50px;
+    top: 0;
+    right: 10px;
     overflow: hidden;
     -moz-transition: 0.2s;
     -o-transition: 0.2s;
@@ -2038,6 +2057,14 @@ body {
     top: 4px;
   }
 
+  .contact {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    right: 10px;
+  }
+
   .phone {
     -moz-transform: translateY(-100px) scale(0.75);
     -ms-transform: translateY(-100px) scale(0.75);
@@ -2050,6 +2077,13 @@ body {
     -webkit-transform: translateY(-210px) scale(0.85);
     transform: translateY(-210px) scale(0.85);
   }
+  .phone.sc-03:before {
+    top: 266px;
+    left: 181px;
+  }
+  .phone.sc-03:after {
+    margin: -258px -125px;
+  }
 
   .section {
     width: 100%;
@@ -2060,26 +2094,88 @@ body {
     line-height: 55px;
   }
   .section .title h3 {
-    font-size: 19px;
+    font-size: 16px;
   }
-  .section.section-02 .title, .section.section-03 .title {
+  .section.section-01 h1 {
+    width: 300px;
+    height: 57px;
+  }
+  .section.section-02 .title, .section.section-03 .title, .section.section-05 .title {
     top: 100%;
     margin-top: -90px;
+    height: 90px;
     background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    left: 0;
   }
-  .section.section-02 .title h3, .section.section-03 .title h3 {
-    padding: 10px;
-    font-size: 24px;
-    line-height: 35px;
+  .section.section-02 .title h3, .section.section-03 .title h3, .section.section-05 .title h3 {
+    padding: 5px 10px;
+    font-size: 19px;
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  .section.section-02 .title h5, .section.section-03 .title h5, .section.section-05 .title h5 {
+    font-size: 12px;
+  }
+  .section.section-02 .title h5 {
+    padding: 0 60px 0 20px;
   }
   .section.section-03 .title {
-    margin-top: -55px;
+    margin-top: 0;
+    height: 100%;
+    top: 0;
+  }
+  .section.section-03 .title h3 {
+    line-height: 60px;
+  }
+  .section.section-03 .bg-ptrn,
+  .section.section-03 .man,
+  .section.section-03 .man-jump,
+  .section.section-03 .man-end,
+  .section.section-03 .say,
+  .section.section-03 .say-jump {
+    display: none;
+  }
+  .section.section-03 .flow-ftr {
+    width: 80px;
+    left: 50%;
+    top: 50%;
+    margin: -180px -40px;
+    height: 360px;
+  }
+  .section.section-03 .flow-ftr li {
+    margin: 0px 0px 40px 0px;
+    width: 80px;
+    padding-top: 80px;
+    background-size: 80px 240px;
+  }
+  .section.section-03 .flow-ftr li.icon-download {
+    background-position: 0 -80px;
+  }
+  .section.section-03 .flow-ftr li.icon-client {
+    background-position: 0 -160px;
+    text-indent: -10px;
   }
   .section.section-05 .title {
-    top: 75%;
+    background: transparent;
+    height: 120px;
+    margin-top: -120px;
+  }
+  .section.section-05 .title h3 {
+    text-align: center;
+  }
+  .section.section-05 .title h5 {
+    font-size: 13px;
+    padding: 0 50px;
   }
   .section.section-05 .more {
     display: none;
+  }
+  .section.section-05 .chart {
+    width: 100%;
+  }
+  .section.section-05 .chart li {
+    margin: 4% 20%;
   }
   .section.section-05 .features {
     top: 0;

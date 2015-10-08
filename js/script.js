@@ -5,7 +5,7 @@ $(document).ready(function() {
         scrollingSpeed: 800,
         resize: true,
         touchSensitivity: 7,
-        normalScrollElementTouchThreshold: 5,
+        normalScrollElementTouchThreshold: 3,
         // loopTop: true,
         // loopBottom: true
 
