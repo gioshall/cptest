@@ -1,45 +1,64 @@
 var i18n = {
-	Lang: {
-		// attr name [ 'zh' , 'en' ]
-		'main-title': ['Click 2 Play 隨點即玩', 'Click 2 Play 隨點即玩'],
-		'sub-title': ['App 試玩廣告 全新演繹方式', 'App 試玩廣告 全新演繹方式'],
-		'description-01': ['點擊 Banner 立即試玩，<br>免安裝、免下載。', '點擊 Banner 立即試玩，<br>免安裝、免下載。'],
-		'description-02': ['觸發使用者下載', '觸發使用者下載'],
-		'features-01': ['強大眼球吸引力<br>有效<i>提升點擊率</i>', '強大眼球吸引力<br>有效<i>提升點擊率</i>'],
-		'features-02': ['<i>HTML5</i> 技術 同時支持<br><i>雙平台</i>及 <i>SDK / API</i> 模式', '<i>HTML5</i> 技術 同時支持<br><i>雙平台</i>及 <i>SDK / API</i> 模式'],
-		'features-03': ['<互動化提升<i>用戶體驗</i>', '<互動化提升<i>用戶體驗</i>'],
-		'features-04': ['<i>降低投放單位成本</i>', '<i>降低投放單位成本</i>'],
-		'quotes-title': ['菁英推薦 Click 2 Play', '菁英推薦 Click 2 Play'],
-
-		'quote-name-01': ['Mark Zuckerberg', 'Mark Zuckerberg'],
-		'quote-pos-01': ['CEO, Facebook', 'CEO, Facebook'],
-		'quote-01': ['Maybe it\'s the best solution ever.', 'Maybe it\'s the best solution ever.'],
-
-		'quote-name-02': ['Tim Cook', 'Tim Cook'],
-		'quote-pos-02': ['CEO, Apple Inc.', 'CEO, Apple Inc.'],
-		'quote-02': ['I\'m thrilled, it\'s amazing.', 'I\'m thrilled, it\'s amazing.'],
-
-		'quote-name-03': ['Bono', 'Bono'],
-		'quote-pos-03': ['Vocals, U2', 'Vocals, U2'],
-		'quote-03': ['I want a cookie.', 'I want a cookie.'],
-
-		'title-partner': ['我們的合作夥伴', '我們的合作夥伴'],
-		'contact-btn': ['聯絡我們', '聯絡我們'],
-		'contact-sub': ['將有專人聯繫，期待與您合作', '將有專人聯繫，期待與您合作']
+	zh:{
+		//zh-tw
+		maintitle: 'Click 2 Play',
+		subtitle: '隨點即玩，最有效的用戶轉化廣告技術',
+		description01: '手遊，端遊一秒變頁遊！',
+		description01sub: '獨家 HTML5 技術轉化你的驚世應用成為最佳廣告工具，在所有受歡迎的瀏覽器上皆可玩！',
+		description02: '從來沒有這麼簡單！',
+		description02sub: '帶領用戶前往應用程式商店取得您的遊戲。多種易用的廣告呈現方式，為您帶來高品質的 CPC / CPI',
+		flow01: '無縫試玩',
+		flow02: '引導下載',
+		flow03: '轉化高品質用戶',
+		description03: '降低投放單位成本！',
+		description03sub: '實時監控對比各廣告位流量貢獻，協助評估流量價值。<br>準確統計並分析廣告投放效果，助力提升廣告收益。',
+		features01: '強大眼球吸引力<br>有效<i>提升點擊率</i>',
+		features02: '<i>HTML5</i> 技術 同時支持<br><i>雙平台</i>及 <i>SDK / API</i> 模式',
+		features03: '互動化提升<i>用戶體驗</i>',
+		features04: '<i>降低投放單位成本</i>',
+		quotestitle: 'Click 2 Play 的成功故事',
+		quotename01: 'Mark Zuckerberg',
+		quotepos01: 'CEO, Facebook',
+		quote01: 'Maybe it\'s the best solution ever.',
+		quotename02: 'Tim Cook',
+		quotepos02: 'CEO, Apple Inc.',
+		quote02: 'I\'m thrilled, it\'s amazing.',
+		quotename03: 'Bono',
+		quotepos03: 'Vocals, U2',
+		quote03: 'I want a cookie.',
+		titlepartner: '我們的合作夥伴',
+		contactbtn: '聯絡我們',
+		contactsub: '將有專人聯繫，期待與您合作'
 	},
-
-	getText: function(msg, lang) {
-		return this.Lang[msg][lang];
+	en:{
+		//en-us
+		maintitle: 'Click 2 Play',
+		subtitle: 'The most effective technology to acquire users.',
+		description01: 'Either mobile apps or console games.',
+		description01sub: 'It runs on your favorite HTML5 browsers now.',
+		description02: 'Never could been so easy!',
+		description02sub: 'Acquiring high quality CPC/CPI by various of C2P ads model.',
+		flow01: 'demo',
+		flow02: 'download',
+		flow03: 'conversion',
+		description03: '降低投放單位成本！',
+		description03sub: '實時監控對比各廣告位流量貢獻，協助評估流量價值。<br>準確統計並分析廣告投放效果，助力提升廣告收益。',
+		features01: '強大眼球吸引力<br>有效<i>提升點擊率</i>',
+		features02: '<i>HTML5</i> 技術 同時支持<br><i>雙平台</i>及 <i>SDK / API</i> 模式',
+		features03: '互動化提升<i>用戶體驗</i>',
+		features04: '<i>降低投放單位成本</i>',
+		quotestitle: 'Our success story',
+		quotename01: 'Mark Zuckerberg',
+		quotepos01: 'CEO, Facebook',
+		quote01: 'Maybe it\'s the best solution ever.',
+		quotename02: 'Tim Cook',
+		quotepos02: 'CEO, Apple Inc.',
+		quote02: 'I\'m thrilled, it\'s amazing.',
+		quotename03: 'Bono',
+		quotepos03: 'Vocals, U2',
+		quote03: 'I want a cookie.',
+		titlepartner: '我們的合作夥伴',
+		contactbtn: '聯絡我們',
+		contactsub: '將有專人聯繫，期待與您合作'
 	}
 }
-
-var title = Object.keys(i18n.Lang);
-for (var i = 0; i < title.length; i++) {
-	var lang = $('html').attr('lang');
-	if (lang == 'zh') {
-		$('[text=' + title[i] + ']').html(i18n.getText(title[i], 0));
-	}
-	if (lang == 'en') {
-		$('[text=' + title[i] + ']').html(i18n.getText(title[i], 1));
-	}
-};

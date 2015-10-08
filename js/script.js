@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        anchors: ['intro', 'intro-game', 'intro-buy', 'intro-growth', 'quotes', 'contact'],
+        anchors: ['intro', 'intro-game', 'intro-buy', 'intro-growth', 'quotes'],
         menu: '.nav',
         scrollingSpeed: 800,
         resize: true,
@@ -20,21 +20,29 @@ $(document).ready(function() {
             if (nextIndex >= 2) {
                 $('.phone').addClass('sc-02');
                 $('.game').addClass('show');
-                $('.bg-02').addClass('switch');
+                //$('.game.show img').attr('src','img/ani.gif');
+                $('.bg-01, .bg-02').addClass('switch');
+                setTimeout(function(){
+                    $('.bg-02.switch .bg-02-2, .bg-02.switch .bg-02-3').addClass('ani');
+                 }, 1000);
             } else {
                 $('.phone').removeClass('sc-02');
                 $('.game').removeClass('show');
-                $('.bg-02').removeClass('switch');
+                $('.game.show img').attr('src','');
+                $('.bg-01, .bg-02').removeClass('switch');
+                $('.bg-02 div').removeClass('ani');
             }
             
             if (nextIndex >= 3) {
                 $('.bg-03').addClass('switch');
                 $('.phone').addClass('sc-03');
                 $('.show').addClass('store');
+                $('.flow-ftr, .queue').addClass('fadein');
             } else {
                 $('.bg-03').removeClass('switch');
                 $('.phone').removeClass('sc-03');
                 $('.show').removeClass('store');
+                $('.flow-ftr, .queue').removeClass('fadein');
             }
 
             if (nextIndex >= 4) {
@@ -75,4 +83,34 @@ $(document).ready(function() {
     $('.onoff').click(function(){
         $('.nav').toggleClass('open')
     });
+});
+
+// set lang
+
+function setLang(e) {
+var title = Object.keys(e);
+for (var i = 0; i < title.length; i++) {   
+    $('[text=' + title[i] + ']').html(e[title[i]]);
+};
+}
+
+setLang(i18n.zh);
+
+$('.lang .lang-zh').click(function(){
+    setLang(i18n.zh);
+    $('.lang span').removeClass('active');
+    $(this).addClass('active');
+});
+
+$('.lang .lang-en').click(function(){
+    setLang(i18n.en);
+    $('.lang span').removeClass('active');
+    $(this).addClass('active');
+});
+
+//contact
+
+$('.contact').click(function(){
+    $(this).toggleClass('acted');
+    $('.contact-form').toggleClass('open');
 });
