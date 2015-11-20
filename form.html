@@ -1,0 +1,62 @@
+<script type="text/javascript">
+	var submitted=false;
+	function formOK() {
+		if(submitted) {
+			document.getElementById('complete').className += " show-ok";
+			setTimeout(function(){ 
+				document.getElementById('complete').className = "";
+			}, 3000);
+		}
+	}
+</script>
+<iframe name="hidden_iframe" id="hidden_iframe"
+style="display:none;" onload="formOK()"></iframe>
+
+<div id="complete">
+	<i class="fa fa-check-circle"></i>
+</div>
+
+<form action="https://docs.google.com/forms/d/1p_Zku18zXyqxPHUfEpZCui6YGimaF0hJtaZxA2oMatY/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+
+<ul>
+<li>
+<label for="entry_690272432">
+<div><h2 text="formname"></h2><label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label><span>*</span></div>
+</label>
+<input type="text" name="entry.690272432" id="entry_690272432" aria-required="true">
+</li>
+
+<li>
+<label for="entry_1387085847">
+<div><h2 text="formphone"></h2><label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label><span>*</span></div>
+</label>
+<input type="text" name="entry.1387085847" id="entry_1387085847" aria-required="true">
+</li>
+
+<li>
+<label for="entry_634051151">
+<div><h2 text="formemail"></h2><label for="itemView.getDomIdToLabel()" aria-label="(Required field)"></label><span>*</span></div>
+</label>
+<input type="email" name="entry.634051151" id="entry_634051151" aria-required="true">
+</li>
+
+<li>
+<label for="entry_1991824172">
+<div><h2 text="formmessage"></h2></div>
+</label>
+<textarea name="entry.1991824172" rows="8" cols="0" id="entry_1991824172"></textarea>
+</li>
+
+</ul>
+<input type="hidden" name="draftResponse" value="[,,&quot;-7596334908345849200&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fvv" value="0">
+<input type="hidden" name="fbzx" value="-7596334908345849200">
+
+<input type="submit" name="submit" value="" id="ss-submit" class="c2p-form-submit">
+</form>
+
+<script type="text/javascript" src="js/i18n.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
