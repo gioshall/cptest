@@ -1,13 +1,41 @@
 <script type="text/javascript">
-	var submitted=false;
+	var submitted = false;
+
 	function formOK() {
-		if(submitted) {
+		if (submitted) {
 			document.getElementById('complete').className += " show-ok";
-			setTimeout(function(){ 
+			setTimeout(function() {
 				document.getElementById('complete').className = "";
 			}, 3000);
 		}
+	};
+
+	function setLang(e) {
+		var title = Object.keys(e);
+		for (var i = 0; i < title.length; i++) {
+			$('[text=' + title[i] + ']').html(e[title[i]]);
+		};
 	}
+
+	setLang(i18n.zh);
+
+	var sbmZh = i18n.zh[Object.keys(i18n.zh)[35]];
+	var sbmEn = i18n.en[Object.keys(i18n.en)[34]];
+	$('.c2p-form-submit').attr('value', sbmZh);
+
+	$('.lang .lang-zh').click(function() {
+		setLang(i18n.zh);
+		$('.lang span').removeClass('active');
+		$(this).addClass('active');
+		$('.c2p-form-submit').attr('value', sbmZh);
+	});
+
+	$('.lang .lang-en').click(function() {
+		setLang(i18n.en);
+		$('.lang span').removeClass('active');
+		$(this).addClass('active');
+		$('.c2p-form-submit').attr('value', sbmEn);
+	});
 </script>
 <iframe name="hidden_iframe" id="hidden_iframe"
 style="display:none;" onload="formOK()"></iframe>
@@ -56,7 +84,3 @@ style="display:none;" onload="formOK()"></iframe>
 
 <input type="submit" name="submit" value="" id="ss-submit" class="c2p-form-submit">
 </form>
-
-<script type="text/javascript" src="js/i18n.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-

@@ -993,7 +993,7 @@ body {
   height: 60px;
   display: block;
   position: fixed;
-  bottom: 15px;
+  bottom: 25px;
   right: 15px;
   z-index: 150;
   background: #E7361A;
@@ -1022,6 +1022,17 @@ body {
   -ms-transform: translateY(500px);
   -webkit-transform: translateY(500px);
   transform: translateY(500px);
+}
+.contact span {
+  font-size: 12px;
+  position: absolute;
+  width: 60px;
+  bottom: -20px;
+  color: #333;
+  text-align: center;
+  line-height: 20px;
+  left: 0;
+  font-weight: bold;
 }
 
 .contact-f,
@@ -2276,6 +2287,10 @@ body {
     margin: -258px -125px;
   }
 
+  .contact span {
+    display: none;
+  }
+
   .section.section-02 .title, .section.section-03 .title {
     width: 100%;
     left: 0;
@@ -2451,6 +2466,9 @@ body {
     line-height: 40px;
     font-size: 24px;
     right: 10px;
+  }
+  .contact span {
+    display: none;
   }
 
   .contact-f-rbsmall {

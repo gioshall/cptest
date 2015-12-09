@@ -28,6 +28,10 @@ $(document).ready(function() {
     }), $(".onoff").click(function() {
         $(".nav").toggleClass("open")
     })
+}), $(window).load(function() {
+    $("#wrapper .form-cont").load("form.html"), $("#wrapper .contact").click(function() {
+        $(this).toggleClass("acted"), $("#wrapper .contact-f-rbsmall").toggleClass("popup")
+    })
 }), setLang(i18n.zh);
 var sbmZh = i18n.zh[Object.keys(i18n.zh)[35]],
     sbmEn = i18n.en[Object.keys(i18n.en)[34]];
